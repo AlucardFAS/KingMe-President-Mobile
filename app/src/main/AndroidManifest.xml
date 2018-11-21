@@ -11,9 +11,6 @@
         android:theme="@android:style/Theme.NoTitleBar">
         <activity android:name=".PickColorActivity" />
         <activity
-            android:name=".Main2Activity"
-            android:label="@string/title_activity_main2" />
-        <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main">
             <intent-filter>
