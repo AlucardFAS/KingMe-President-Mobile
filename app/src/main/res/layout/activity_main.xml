@@ -25,7 +25,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="216dp"
-        android:fontFamily="@font/Lato-Regular"
+        android:fontFamily="@font/lato"
         android:text="JOGAR"
         android:textSize="30sp" />
 
