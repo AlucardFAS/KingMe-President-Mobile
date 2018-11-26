@@ -9,6 +9,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
@@ -16,15 +17,24 @@ public class MainActivity extends Activity {
 
     Button jogar;
     TextView regras;
+    ImageView sobre;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        sobre = findViewById(R.id.icone);
 
         jogar = findViewById(R.id.button);
         regras = findViewById(R.id.regrajogo);
 
+        sobre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), sobre.class);
+                startActivity(i);
+            }
+        });
 
         jogar.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -41,4 +41,14 @@
         android:textColor="@android:color/black"
         android:textSize="18sp" />
 
+    <ImageView
+        android:id="@+id/icone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="93dp"
+        android:layout_marginTop="11dp"
+        android:layout_toEndOf="@+id/button"
+        android:src="@mipmap/baseline_more_vert_black_24" />
+
 </RelativeLayout>
