@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context=".placar">
+
+    <TextView
+        android:id="@+id/placar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:fontFamily="@font/lato"
+        android:text="Placar:"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="650dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@android:color/white">
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/rodada"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rodada:"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"/>
+
+</LinearLayout>

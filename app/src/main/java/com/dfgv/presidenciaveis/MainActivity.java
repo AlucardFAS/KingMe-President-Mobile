@@ -39,8 +39,10 @@ public class MainActivity extends Activity {
         jogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), PopUpVotar.class);
-                startActivity(i);
+//                Intent i = new Intent(getApplicationContext(), PopUpVotar.class);
+//                startActivity(i);
+                Intent i = new Intent(getApplicationContext(), placar.class);
+               startActivity(i);
             }
         });
         regras.setOnClickListener(new View.OnClickListener() {
