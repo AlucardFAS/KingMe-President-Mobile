@@ -33,7 +33,7 @@ public class placar extends Activity {
         TextView ponuacaojogos = (TextView) cardView.findViewById(R.id.pontjogo);
 
         nomes.setText(nome);
-        pontuacaorodadas.setText(""+pontuacaopartida);
+        pontuacaorodadas.setText(""+"("+pontuacaopartida+")");
         ponuacaojogos.setText(""+pontuacaojogo);
         mensagens.addView(cardView);
     }

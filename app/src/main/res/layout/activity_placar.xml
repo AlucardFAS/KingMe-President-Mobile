@@ -16,7 +16,7 @@
         android:fontFamily="@font/latoblackitalic"
         android:text="PLACAR:"
         android:textAlignment="center"
-        android:textColor="@android:color/holo_red_light"
+        android:textColor="#E84D5B"
         android:textSize="20pt" />
 
     <ScrollView
@@ -40,9 +40,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/latoitalic"
-        android:text="Rodada:"
+        android:text="FIM DA RODADA:"
         android:textAlignment="center"
-        android:textColor="@android:color/black"
-        android:textSize="20sp" />
+        android:textSize="24sp"
+        android:textColor="#E84D5B" />
 
 </LinearLayout>
