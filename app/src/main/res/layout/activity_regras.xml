@@ -22,7 +22,7 @@
             android:layout_alignParentStart="true"
             android:layout_marginStart="141dp"
             android:layout_marginBottom="-37dp"
-            android:fontFamily="@font/latoRegular"
+            android:fontFamily="@font/latoregular"
             android:text="Regras"
             android:textColor="@android:color/black"
             android:textSize="22sp" />
@@ -31,7 +31,7 @@
             android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fontFamily="@font/latoRegular"
+            android:fontFamily="@font/latoregular"
             android:text="@string/regras"
             android:textColor="@android:color/black"
             android:textSize="20sp" />

@@ -19,7 +19,7 @@
             android:layout_height="36dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="20dp"
-            android:fontFamily="@font/latoLightItalic"
+            android:fontFamily="@font/latolightitalic"
             android:textColor="@android:color/black"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +31,7 @@
             android:layout_height="36dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="8dp"
-            android:fontFamily="@font/latoBlackItalic"
+            android:fontFamily="@font/latolightitalic"
             android:textColor="@android:color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -42,7 +42,7 @@
             android:layout_height="36dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="100dp"
-            android:fontFamily="@font/latoBoldItalic"
+            android:fontFamily="@font/latobolditalic"
             android:textColor="@android:color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

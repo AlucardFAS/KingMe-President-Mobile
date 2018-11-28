@@ -25,7 +25,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="216dp"
-        android:fontFamily="@font/latoRegular"
+        android:fontFamily="@font/latoregular"
         android:text="JOGAR"
         android:textSize="30sp" />
 
@@ -36,7 +36,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="86dp"
-        android:fontFamily="@font/latoRegular"
+        android:fontFamily="@font/latoregular"
         android:text="Regra do Jogo"
         android:textColor="@android:color/black"
         android:textSize="18sp" />
