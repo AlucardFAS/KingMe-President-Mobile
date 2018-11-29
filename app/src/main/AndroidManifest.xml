@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dfgv.presidenciaveis">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,9 +22,10 @@
         <activity
             android:name=".PopUpVotar"
             android:theme="@style/AppTheme.PopUp" />
-        <activity
-            android:name=".PopUpSelecionar"
-            android:theme="@style/AppTheme.PopUp" />
+        <activity android:name=".regras" />
+        <activity android:name=".sobre" />
+        <activity android:name=".placar" />
+        <activity android:name=".home"></activity>
     </application>
 
 </manifest>

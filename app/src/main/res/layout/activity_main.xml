@@ -25,8 +25,30 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="216dp"
-        android:fontFamily="@font/lato"
+        android:fontFamily="@font/latoregular"
         android:text="JOGAR"
         android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/regrajogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="86dp"
+        android:fontFamily="@font/latoregular"
+        android:text="Regra do Jogo"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/icone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="93dp"
+        android:layout_marginTop="11dp"
+        android:layout_toEndOf="@+id/button"
+        android:src="@mipmap/baseline_more_vert_black_24" />
 
 </RelativeLayout>

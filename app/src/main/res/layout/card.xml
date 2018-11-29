@@ -32,7 +32,6 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="8dp"
             android:textSize="24sp"
-            android:textColor="#2BACB5"
             android:fontFamily="@font/latoblackitalic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
