@@ -28,7 +28,15 @@ public class MainActivity extends Activity {
         jogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), home.class);
+
+//                Intent intent = new Intent(MainActivity.this, JogoActivity.class);
+//                intent.putExtra("nomeJogador","nome do jogador vai aqui");
+//                intent.putExtra("atividadeJogo","com.dfgv.presidenciaveis.home");
+//                        intent.putExtra("criar",false);
+//
+//                        startActivity(intent);
+
+                Intent i = new Intent(MainActivity.this, PopUpSelecionar.class);
                 startActivity(i);
             }
         });
