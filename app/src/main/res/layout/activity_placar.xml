@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context=".placar">
+
+    <TextView
+        android:id="@+id/placar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@android:color/white"
+        android:fontFamily="@font/latoblackitalic"
+        android:text="PLACAR:"
+        android:textAlignment="center"
+        android:textColor="#E84D5B"
+        android:textSize="20pt" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="650dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@android:color/white">
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/rodada"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/latoitalic"
+        android:text="FIM DA RODADA:"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textColor="#E84D5B" />
+
+</LinearLayout>

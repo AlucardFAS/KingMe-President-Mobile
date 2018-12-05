@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Presidenciaveis</string>
+    <string name="regras">\n\n
+        1.	Cada jogador escolhe uma cor e recebe o cartão de voto “Sim” e o marcador de pontuação dessa cor.  Coloque o marcador de pontuação no espaço marcado com “0” da trilha de pontuação.
+\n
+2.	Embaralhe os objetivos secretos e dê uma carta com a face para baixo para cada jogador. O cartão de meta lista os 6 personagens favoritos do jogador. A ordem dos personagens não tem importância.
+\n
+3.	Pague a cada jogador o mesmo número de cartas “de veto”, como segue:
+\n
+•	3 jogadores = 4 cartas de veto\n
+•	4 jogadores = 3 cartas de veto\n
+•	5 jogadores = 2 cartas de veto\n
+•	6 jogadores = 2 cartas de veto\n
+
+O número de cartas "de veto" é mantido em segredo durante o jogo
+\n
+        <b>Como jogar</b>\n
+1) Escolha um jogador inicial aleatoriamente, o jogo é jogado no sentido horário, mais de 3 rodadas.
+\n
+2) Cada rodada é dividida em 2 fases:\n
+a) Colocação de personagens no jogo, e\n
+b) Adesão para os personagens.\n
+
+3) Colocar personagens no castelo: começando com o primeiro jogador e continuando no sentido horário, cada jogador pega 1 personagem e coloca-o no castelo, até que cada jogador tenha colocado o mesmo número de personagens. (com 3, 4 e 6 jogadores, sobra um e com 5 jogadores, sobraram três). O jogador pode colocar o personagem em qualquer andar do castelo marcado com 1, 2, 3 ou 4). Nunca pode haver mais de 4 caracteres no mesmo andar. Os caracteres restantes começam no andar “0”.
+\n
+4) Adesão ao Presidente: começando com o primeiro jogador e prosseguindo no sentido horário, cada jogador escolhe um personagem no castelo e o move um andar. Se o próximo andar já tiver 4 personagens nele, o personagem não pode ser movido naquele turno. Personagens nunca se movem.  Se o personagem é movido para o andar #5, ele alcança o trono e é indicado como o novo Rei! Os jogadores devem votar imediatamente naquele personagem. Caso contrário, o turno acabou e jogo continua com o próximo jogador.
+\n
+5) A Eleição do Presidente: Quando o personagem é movido para o espaço do jogo, os jogadores votam se o personagem deve ser coroado o novo presidente ou não.  Cada jogador agora
+deve escolher entre apoiar (votar “sim”) o indicado ou não (vetar). Cada jogador escolhe um cartão de voto secretamente e coloca-o de frente para ela. Quando todos os jogadores tiverem escolhido, as cartas são reveladas ao mesmo tempo.\n
+•	Se todos os votos forem Sim, o reino tem um novo Rei e a rodada termina;\n
+•	Se houver pelo menos um voto “Não (de veto)”, o personagem não é eleito - este personagem é eliminado da rodada (remover do jogo). Cartas “de veto” são então descartadas,  e os cartões de "voto sim" são devolvidos ao jogador.  Lembre-se que o número de cartas na mão de um jogador é secreto!\n
+O jogo continua normalmente com o jogador à esquerda daquele com a coroa.
+\n
+6) Fim da rodada e pontuação: A rodada termina assim que o rei é coroado. Todos os jogadores revelam nesse momento seus objetivos secretos. Cada jogador ganha pontos com base na posição de seu personagens favoritos no jogo, e move seu marcador de pontuação o número apropriado de espaços:
+•	10 pontos para o presidente,\n
+•	5 pontos para cada nível 5\n
+•	4 pontos para cada nível 4, etc….\n
+•	Pontuação de caracteres eliminados “0”.
+\n
+7) Nova rodada: cada jogador descarta sua carta de personagens favoritos e compra uma nova. Cada jogador leva todos os seus cartões de votos de volta (incluindo quaisquer cartões "de veto"). Coloque todos os 13 caracteres ao lado do tabuleiro. O jogador inicial é o que está sentado à esquerda daquele com a coroa.
+\n
+        <b>Final do jogo</b>
+\nO jogador com o maior pontuação ganha. Em caso de empate, o vencedor é o jogador com mais personagens favoritos ainda no castelo no final da terceira rodada.
+</string>
+
+</resources>
