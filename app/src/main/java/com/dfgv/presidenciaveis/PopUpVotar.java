@@ -11,11 +11,13 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class PopUpVotar extends Activity {
 
     Button btnClose;
     Button btnYes;
+    TextView candidato;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,8 @@ public class PopUpVotar extends Activity {
 
         setContentView(R.layout.activity_pop_up_votar);
 
+
+        candidato = findViewById(R.id.txtCandidato);
         btnClose = findViewById(R.id.btnCancelar);
         btnClose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,16 +44,6 @@ public class PopUpVotar extends Activity {
                 //Retornar true
             }
         });
-
-
-
-        DisplayMetrics dm = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
-
-        int width = dm.widthPixels;
-        int height = dm.heightPixels;
-
-        getWindow().setLayout((int)(width*.85), (int)(height*.50));
 
         WindowManager.LayoutParams params = getWindow().getAttributes();
         params.gravity = Gravity.CENTER;

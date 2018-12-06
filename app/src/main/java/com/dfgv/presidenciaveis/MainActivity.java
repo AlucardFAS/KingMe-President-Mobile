@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
 //
 //                        startActivity(intent);
 
-                Intent i = new Intent(MainActivity.this, PopUpSelecionar.class);
+                Intent i = new Intent(MainActivity.this, PopUpVotar.class);
                 startActivity(i);
             }
         });
