@@ -33,7 +33,7 @@ public class Principal extends Activity {
         setContentView(R.layout.activity_principal);
 
         //region FindView
-        container = findViewById(R.id.containerPrincipal);
+        //container = findViewById(R.id.containerPrincipal);
 
         imgViewMinis1 = findViewById(R.id.imgMinis1);
         imgViewMinis2 = findViewById(R.id.imgMinis2);
@@ -49,12 +49,6 @@ public class Principal extends Activity {
         imgViewMinis1.setVisibility(imgViewMinis1.INVISIBLE);
 
         //endregion
-
-        Fragment fr = new FragAguardaVotacao();
-        FragmentManager fm = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fm.beginTransaction();
-        fragmentTransaction.replace(R.id.container, fr);
-        fragmentTransaction.commit();
 
     }
 }
