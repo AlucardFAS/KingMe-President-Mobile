@@ -20,41 +20,42 @@
 
 
         <TextView
-            android:id="@+id/txtCandidato"
+            android:id="@+id/txtCandidatoVotar"
             android:layout_width="205dp"
             android:layout_height="47dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:text="CANDIDATO"
             android:textColor="#2BADB5"
             android:textSize="36sp"
             android:textStyle="bold"
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintHorizontal_bias="0.36"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/txtCandidato2"
+            android:id="@+id/txtCandidatoVotar2"
             android:layout_width="178dp"
             android:layout_height="51dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="28dp"
             android:text="CANDIDATO"
             android:textColor="#2BADB5"
             android:textSize="30sp"
             android:textStyle="bold"
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtCandidato" />
+            app:layout_constraintStart_toEndOf="@+id/txtVotar"
+            app:layout_constraintTop_toBottomOf="@+id/txtCandidatoVotar" />
 
         <Button
-            android:id="@+id/btnCancelar"
+            android:id="@+id/btnCancelarVotar"
             android:layout_width="218dp"
             android:layout_height="49dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="28dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
@@ -64,38 +65,33 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnSim"
-            app:layout_constraintVertical_bias="0.117" />
+            app:layout_constraintTop_toBottomOf="@+id/btnSimVotar" />
 
         <TextView
-            android:id="@+id/txtPromover"
+            android:id="@+id/txtVotar"
             android:layout_width="109dp"
             android:layout_height="46dp"
-            android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="28dp"
             android:text="Promover"
             android:textSize="24sp"
             android:typeface="sans"
             android:visibility="visible"
-            app:layout_constraintEnd_toStartOf="@+id/txtCandidato2"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtCandidato" />
+            app:layout_constraintTop_toBottomOf="@+id/txtCandidatoVotar" />
 
         <Button
-            android:id="@+id/btnSim"
+            android:id="@+id/btnSimVotar"
             android:layout_width="218dp"
             android:layout_height="49dp"
-            android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/pop_selecionar"
             android:text="SIM"
             android:textColor="#F5ECD9"
-            android:background="@drawable/pop_selecionar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtCandidato2" />
+            app:layout_constraintTop_toBottomOf="@+id/txtCandidatoVotar2" />
     </android.support.constraint.ConstraintLayout>
 </android.support.constraint.ConstraintLayout>

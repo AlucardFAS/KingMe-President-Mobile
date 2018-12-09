@@ -3,9 +3,7 @@ package com.dfgv.presidenciaveis;
 import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -28,8 +26,9 @@ public class PopUpVotar extends Activity {
         setContentView(R.layout.activity_pop_up_votar);
 
 
-        candidato = findViewById(R.id.txtCandidato);
-        btnClose = findViewById(R.id.btnCancelar);
+        candidato = findViewById(R.id.txtCandidatoVotar);
+        btnClose = findViewById(R.id.btnCancelarVotar);
+
         btnClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,7 +36,7 @@ public class PopUpVotar extends Activity {
             }
         });
 
-        btnYes = findViewById(R.id.btnSim);
+        btnYes = findViewById(R.id.btnSimEleger);
         btnYes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
