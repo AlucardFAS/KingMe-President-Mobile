@@ -1,8 +1,10 @@
 package com.dfgv.presidenciaveis;
 
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -12,6 +14,8 @@ public class Principal extends Activity {
     private ViewGroup mensagens;
 
     //region declarations
+    LinearLayout container;
+
     ImageView imgViewMinis1;
     ImageView imgViewMinis2;
     ImageView imgViewMinis3;
@@ -29,6 +33,8 @@ public class Principal extends Activity {
         setContentView(R.layout.activity_principal);
 
         //region FindView
+        container = findViewById(R.id.containerPrincipal);
+
         imgViewMinis1 = findViewById(R.id.imgMinis1);
         imgViewMinis2 = findViewById(R.id.imgMinis2);
         imgViewMinis3 = findViewById(R.id.imgMinis3);
@@ -42,9 +48,13 @@ public class Principal extends Activity {
 
         imgViewMinis1.setVisibility(imgViewMinis1.INVISIBLE);
 
-
-
         //endregion
+
+        Fragment fr = new FragAguardaVotacao();
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+        fragmentTransaction.replace(R.id.container, fr);
+        fragmentTransaction.commit();
 
     }
 }
