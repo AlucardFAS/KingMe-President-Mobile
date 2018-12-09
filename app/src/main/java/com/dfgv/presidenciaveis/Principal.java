@@ -2,39 +2,49 @@ package com.dfgv.presidenciaveis;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-
 public class Principal extends Activity {
     private ViewGroup mensagens;
+
+    //region declarations
+    ImageView imgViewMinis1;
+    ImageView imgViewMinis2;
+    ImageView imgViewMinis3;
+    ImageView imgViewMinis4;
+
+    TextView txtMinis1;
+    TextView txtMinis2;
+    TextView txtMinis3;
+    TextView txtMinis4;
+    //endregion
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-        mensagens = (ViewGroup) findViewById(R.id.container);
-        addItem("Título 1");
-        addItem("Título 2");
-        addItem("Título 3");
-        addItem("Título 4");
-        addItem("Título 5");
-        addItem("Título 6");
+        setContentView(R.layout.activity_principal);
+
+        //region FindView
+        imgViewMinis1 = findViewById(R.id.imgMinis1);
+        imgViewMinis2 = findViewById(R.id.imgMinis2);
+        imgViewMinis3 = findViewById(R.id.imgMinis3);
+        imgViewMinis4 = findViewById(R.id.imgMinis4);
+
+        txtMinis1 = findViewById(R.id.txtMinis1);
+        txtMinis2 = findViewById(R.id.txtMinis2);
+        txtMinis3 = findViewById(R.id.txtMinis3);
+        txtMinis4 = findViewById(R.id.txtMinis4);
 
 
-    }
-    private void addItem(String nome) {
-        LinearLayout cardView = (LinearLayout) LayoutInflater.from(this)
-                .inflate(R.layout.cardhome, mensagens, false);
-        TextView nomes = (TextView) cardView.findViewById(R.id.nome);
+        imgViewMinis1.setVisibility(imgViewMinis1.INVISIBLE);
 
-        nomes.setText(nome);
 
-        mensagens.addView(cardView);
+
+        //endregion
+
     }
 }

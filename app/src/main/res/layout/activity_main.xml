@@ -19,7 +19,7 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnJogarMain"
         android:layout_width="157dp"
         android:layout_height="81dp"
         android:layout_alignParentBottom="true"
@@ -48,7 +48,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="93dp"
         android:layout_marginTop="11dp"
-        android:layout_toEndOf="@+id/button"
+        android:layout_toEndOf="@+id/btnJogarMain"
         android:src="@mipmap/baseline_more_vert_black_24" />
 
 </RelativeLayout>

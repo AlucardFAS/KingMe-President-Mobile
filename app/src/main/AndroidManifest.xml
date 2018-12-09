@@ -18,17 +18,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".placar" />
-        <activity android:name=".sobre" />
-        <activity android:name=".regras" />
-        <activity android:name=".home" />
+        <activity android:name=".Placar" />
+        <activity android:name=".Sobre" />
+        <activity android:name=".Regras" />
+        <activity android:name=".Principal" />
         <activity
             android:name=".PopUpVotar"
             android:theme="@style/AppTheme.PopUp" />
         <activity
             android:name=".PopUpSelecionar"
             android:theme="@style/AppTheme.PopUp" />
-        <activity android:name=".PopUpEleger"></activity>
+        <activity
+            android:name=".PopUpEleger"
+            android:theme="@style/AppTheme.PopUp" />
     </application>
 
 </manifest>
