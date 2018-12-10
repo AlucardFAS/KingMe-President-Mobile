@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
         jogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), Principal.class);
+                Intent i = new Intent(getApplicationContext(), Placar.class);
                 startActivity(i);
             }
         });
