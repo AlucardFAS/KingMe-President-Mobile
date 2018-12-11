@@ -43,4 +43,7 @@ O jogo continua normalmente com o jogador à esquerda daquele com a coroa.
 \nO jogador com o maior pontuação ganha. Em caso de empate, o vencedor é o jogador com mais personagens favoritos ainda no castelo no final da terceira rodada.
 </string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

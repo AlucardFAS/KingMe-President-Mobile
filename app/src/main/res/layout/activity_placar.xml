@@ -6,7 +6,7 @@
 
     android:background="@android:color/white"
     android:orientation="vertical"
-    tools:context=".placar">
+    tools:context=".Placar">
 
     <TextView
         android:id="@+id/placar"
@@ -32,17 +32,231 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/jogador1"
+                    android:layout_width="196dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="1. Jogador"
+                    android:textColor="#2BADB5"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/pontosGanhos1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="(+0000)"
+                    android:textColor="#E84D5B"
+                    android:textSize="8pt" />
+
+                <TextView
+                    android:id="@+id/pontos1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="00000"
+                    android:textColor="#2BADB5"
+                    android:textSize="8pt"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/jogador2"
+                    android:layout_width="196dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="2. Jogador"
+                    android:textColor="#2BADB5"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/pontosGanhos2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="(+0000)"
+                    android:textColor="#E84D5B"
+                    android:textSize="8pt" />
+
+                <TextView
+                    android:id="@+id/pontos2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="00000"
+                    android:textColor="#2BADB5"
+                    android:textSize="8pt"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/jogador3"
+                    android:layout_width="196dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="3. Jogador"
+                    android:textColor="#2BADB5"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/pontosGanhos3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="(+0000)"
+                    android:textColor="#E84D5B"
+                    android:textSize="8pt" />
+
+                <TextView
+                    android:id="@+id/pontos3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="00000"
+                    android:textColor="#2BADB5"
+                    android:textSize="8pt"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/jogador4"
+                    android:layout_width="196dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="4. Jogador"
+                    android:textColor="#2BADB5"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/pontosGanhos4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="(+0000)"
+                    android:textColor="#E84D5B"
+                    android:textSize="8pt" />
+
+                <TextView
+                    android:id="@+id/pontos4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="00000"
+                    android:textColor="#2BADB5"
+                    android:textSize="8pt"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/jogador5"
+                    android:layout_width="196dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="5. Jogador"
+                    android:textColor="#2BADB5"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/pontosGanhos5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="(+0000)"
+                    android:textColor="#E84D5B"
+                    android:textSize="8pt" />
+
+                <TextView
+                    android:id="@+id/pontos5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="00000"
+                    android:textColor="#2BADB5"
+                    android:textSize="8pt"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="158dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/jogador6"
+                    android:layout_width="196dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="6. Jogador"
+                    android:textColor="#2BADB5"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/pontosGanhos6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="(+0000)"
+                    android:textColor="#E84D5B"
+                    android:textSize="8pt" />
+
+                <TextView
+                    android:id="@+id/pontos6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="00000"
+                    android:textColor="#2BADB5"
+                    android:textSize="8pt"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/fimDaRodada"
+                android:layout_width="match_parent"
+                android:layout_height="153dp"
+                android:background="@android:color/white"
+                android:fontFamily="@font/latoblackitalic"
+                android:text="Fim da Rodada"
+                android:textAlignment="center"
+                android:textColor="#E84D5B"
+                android:textSize="18pt"
+                />
+
         </LinearLayout>
     </ScrollView>
-
-    <TextView
-        android:id="@+id/rodada"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/latoitalic"
-        android:text="FIM DA RODADA:"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textColor="#E84D5B" />
 
 </LinearLayout>

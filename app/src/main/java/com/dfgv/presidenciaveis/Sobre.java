@@ -5,7 +5,7 @@ import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class sobre extends Activity {
+public class Sobre extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

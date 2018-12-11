@@ -14,40 +14,41 @@ public class MainActivity extends AppCompatActivity {
 
 
     Button jogar;
-    ImageView iv;
+    ImageView sobre;
     TextView regras;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setContentView(R.layout.activity_main);
 
-        jogar = findViewById(R.id.button);
-        iv = findViewById(R.id.icone);
+
+        jogar = findViewById(R.id.btnJogarMain);
+        sobre = findViewById(R.id.icone);
         regras = findViewById(R.id.regrajogo);
+
         jogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent i = new Intent(getApplicationContext(), Login.class);
                 startActivity(i);
             }
         });
 
-        iv.setOnClickListener(new View.OnClickListener() {
+        sobre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent ii = new Intent(getApplicationContext(), sobre.class);
-                startActivity(ii);
+                Intent i = new Intent(getApplicationContext(), Sobre.class);
+                startActivity(i);
             }
         });
 
         regras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent iii = new Intent(getApplicationContext(), regras.class);
-                startActivity(iii);
+                Intent i = new Intent(getApplicationContext(), Regras.class);
+                startActivity(i);
             }
         });
 

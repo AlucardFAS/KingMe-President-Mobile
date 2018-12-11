@@ -3,19 +3,19 @@ package com.dfgv.presidenciaveis;
 import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class PopUpVotar extends Activity {
 
     Button btnClose;
     Button btnYes;
+    TextView candidato;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,10 @@ public class PopUpVotar extends Activity {
 
         setContentView(R.layout.activity_pop_up_votar);
 
-        btnClose = findViewById(R.id.btnCancelar);
+
+        candidato = findViewById(R.id.txtCandidatoVotar);
+        btnClose = findViewById(R.id.btnCancelarVotar);
+
         btnClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,23 +36,13 @@ public class PopUpVotar extends Activity {
             }
         });
 
-        btnYes = findViewById(R.id.btnSim);
+        btnYes = findViewById(R.id.btnSimEleger);
         btnYes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Retornar true
             }
         });
-
-
-
-        DisplayMetrics dm = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
-
-        int width = dm.widthPixels;
-        int height = dm.heightPixels;
-
-        getWindow().setLayout((int)(width*.85), (int)(height*.50));
 
         WindowManager.LayoutParams params = getWindow().getAttributes();
         params.gravity = Gravity.CENTER;

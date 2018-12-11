@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import static android.text.Layout.JUSTIFICATION_MODE_INTER_WORD;
 
-public class regras extends Activity {
+public class Regras extends Activity {
 
     @SuppressLint("NewApi")
     @Override
