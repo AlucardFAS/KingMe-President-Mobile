@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.dfgv.presidenciaveis.api.APIPartida;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -42,12 +43,20 @@ public class Principal extends Activity {
     Retrofit retrofit;
     APIPartida api;
 
+    // Button b1,b2,b3,b4,b
+    List<List<ImageView>> imageViews;
+
+    //endregion
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);//aqui apaga as parada de título da janela do PopUp
         setContentView(R.layout.activity_principal);
+
 
 
         SharedPreferences pref = getApplicationContext().getSharedPreferences("jogo", 0); // 0 - for private mode
@@ -91,10 +100,11 @@ public class Principal extends Activity {
         txtMinis4 = findViewById(R.id.txtMinis4);
 
 
+
         imgViewMinis1.setVisibility(imgViewMinis1.INVISIBLE);
 
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://viacep.com.br/ws/")
+                .baseUrl("https://mepresidenta.azurewebsites.net/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -107,7 +117,7 @@ public class Principal extends Activity {
     }
 
 
-    void posicionarPersonagem(Integer setor, String personagem) {
+    void posicionarPersonagem(Long setor, String personagem) {
 
         Call<List<Setor>> call = api.posicionarPersonagem(setor, personagem, jogador);
 
@@ -171,8 +181,7 @@ public class Principal extends Activity {
     @TargetApi(Build.VERSION_CODES.N)
     void getProximoJogador() {
 
-        Integer value = Math.toIntExact(jogador.getId());
-        Call<Jogador> call = api.getJogadorDaVez(value);
+        Call<Jogador> call = api.getJogadorDaVez(jogador.getId());
 
         Callback<Jogador> callback =
                 new Callback<Jogador>() {
