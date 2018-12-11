@@ -31,7 +31,10 @@ public class MainActivity extends AppCompatActivity {
         jogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), Login.class);
+                //Intent i = new Intent(getApplicationContext(), Login.class);
+
+                //Para fins de teste
+                Intent i = new Intent(getApplicationContext(), Principal.class);
                 startActivity(i);
             }
         });
