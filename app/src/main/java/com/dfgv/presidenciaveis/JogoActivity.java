@@ -1,11 +1,12 @@
 package com.dfgv.presidenciaveis;
 
+import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-public class JogoActivity extends AppCompatActivity {
+public class JogoActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

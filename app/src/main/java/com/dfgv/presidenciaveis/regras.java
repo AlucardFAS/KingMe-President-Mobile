@@ -19,7 +19,7 @@ public class regras extends Activity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         TextView textView = (TextView) findViewById(R.id.textView5) ;
 
-        textView.setJustificationMode(JUSTIFICATION_MODE_INTER_WORD);
+        //textView.setJustificationMode(JUSTIFICATION_MODE_INTER_WORD);
 
     }
 }

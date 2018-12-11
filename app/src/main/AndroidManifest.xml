@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.dfgv.presidenciaveis">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        tools:replace="android:theme"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@android:style/Theme.NoTitleBar">
+        android:theme="@style/Theme.AppCompat.Light">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,15 +21,17 @@
             </intent-filter>
         </activity>
         <activity android:name=".placar" />
-        <activity android:name=".sobre"/>
-        <activity android:name=".regras"/>
-        <activity android:name=".home"/>
+        <activity android:name=".sobre" />
+        <activity android:name=".regras" />
+        <activity android:name=".home" />
+        <activity android:name=".JogoActivity" />
         <activity
             android:name=".PopUpVotar"
             android:theme="@style/AppTheme.PopUp" />
         <activity
             android:name=".PopUpSelecionar"
             android:theme="@style/AppTheme.PopUp" />
+        <activity android:name=".Login"></activity>
     </application>
 
 </manifest>

@@ -4,12 +4,13 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.app.Activity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
 
     Button jogar;
@@ -29,14 +30,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
 
-//                Intent intent = new Intent(MainActivity.this, JogoActivity.class);
-//                intent.putExtra("nomeJogador","nome do jogador vai aqui");
-//                intent.putExtra("atividadeJogo","com.dfgv.presidenciaveis.home");
-//                        intent.putExtra("criar",false);
-//
-//                        startActivity(intent);
-
-                Intent i = new Intent(MainActivity.this, PopUpSelecionar.class);
+                Intent i = new Intent(getApplicationContext(), Login.class);
                 startActivity(i);
             }
         });
