@@ -8,91 +8,124 @@
     tools:context=".Login"
     android:id="@+id/relativeLayout">
 
-    <EditText
-        android:id="@+id/seunome"
-        android:layout_width="283dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="100dp"
-        android:ems="10"
-        android:fontFamily="@font/lato"
-        android:inputType="text|textUri|textEmailAddress"
-        android:text="Seu nome"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/suasala"
-        android:layout_width="283dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="348dp"
-        android:ems="10"
-        android:fontFamily="@font/lato"
-        android:inputType="text|textUri|textEmailAddress"
-        android:text="Nome da sala"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/seunome3"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.062" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/suasenha"
-        android:layout_width="283dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="452dp"
-        android:ems="10"
-        android:fontFamily="@font/lato"
-        android:inputType="text|textUri|textEmailAddress"
-        android:text="Senha"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/entrarjogo"
-        android:layout_width="280dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="56dp"
-        android:background="#E84D5B"
-        android:fontFamily="@font/latoblackitalic"
-        android:text="ENTRAR NO JOGO"
-        android:textAlignment="center"
-        android:textColor="#F5ECD9"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/suasala"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seunome"
-        app:layout_constraintVertical_bias="0.146" />
+                <Button
+                    android:id="@+id/entrarjogo"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="#E84D5B"
+                    android:fontFamily="@font/latoblackitalic"
+                    android:text="ENTRAR NO JOGO"
+                    android:textAlignment="center"
+                    android:textColor="#F5ECD9"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.488"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seunome" />
 
-    <Button
-        android:id="@+id/entrarsala"
-        android:layout_width="280dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="408dp"
-        android:background="#E84D5B"
-        android:fontFamily="@font/latoblackitalic"
-        android:text="CRIAR UM JOGO"
-        android:textAlignment="center"
-        android:textColor="#F5ECD9"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seunome"
-        app:layout_constraintVertical_bias="0.058" />
+                <EditText
+                    android:id="@+id/suasenha"
+                    android:layout_width="283dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="8dp"
+                    android:ems="10"
+                    android:fontFamily="@font/lato"
+                    android:hint="Senha"
+                    android:inputType="text|textUri|textEmailAddress"
+                    android:textAlignment="center"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.517"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/suasala" />
+
+                <Button
+                    android:id="@+id/entrarsala"
+                    android:layout_width="285dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="48dp"
+                    android:background="#E84D5B"
+                    android:fontFamily="@font/latoblackitalic"
+                    android:text="CRIAR UM JOGO"
+                    android:textAlignment="center"
+                    android:textColor="#F5ECD9"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/suasenha" />
+
+                <EditText
+                    android:id="@+id/suasala"
+                    android:layout_width="283dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginEnd="8dp"
+                    android:ems="10"
+                    android:fontFamily="@font/lato"
+                    android:hint="Nome da Sala"
+                    android:inputType="text|textUri|textEmailAddress"
+                    android:textAlignment="center"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.505"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/entrarjogo" />
+
+                <EditText
+                    android:id="@+id/seunome"
+                    android:layout_width="283dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="8dp"
+                    android:ems="10"
+                    android:fontFamily="@font/lato"
+                    android:hint="Seu Nome"
+                    android:inputType="text|textUri|textEmailAddress"
+                    android:textAlignment="center"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/lato"
+                    android:text="Não insira espaço ou caracteres especiais em nenhum dos campos*"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.512"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
 

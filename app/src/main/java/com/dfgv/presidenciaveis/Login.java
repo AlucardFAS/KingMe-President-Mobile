@@ -6,6 +6,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import br.com.senac.pdm.mepresidenta.lobby.CriarJogoActivity;
@@ -22,6 +23,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);//aqui apaga as parada de título da janela do PopUp
         setContentView(R.layout.activity_login);
         entrarjogo = findViewById(R.id.entrarjogo);
         criarsala = findViewById(R.id.entrarsala);
