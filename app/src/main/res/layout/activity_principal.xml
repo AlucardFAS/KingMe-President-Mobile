@@ -9,11 +9,11 @@
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout3"
-        android:layout_width="345dp"
+        android:layout_width="410dp"
         android:layout_height="309dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,10 +22,10 @@
         <LinearLayout
             android:layout_width="335dp"
             android:layout_height="301dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/pop_border"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -50,7 +50,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/ic_launcher"
+                        android:src="@mipmap/charicon"
                         android:visibility="visible" />
 
                     <TextView
@@ -72,7 +72,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@mipmap/charicon" />
 
                     <TextView
                         android:id="@+id/txtMinis2"
@@ -93,7 +93,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@mipmap/charicon" />
 
                     <TextView
                         android:id="@+id/txtMinis3"
@@ -113,7 +113,7 @@
                         android:id="@+id/imgMinis4"
                         android:layout_width="match_parent"
                         android:layout_height="26dp"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@mipmap/charicon" />
 
                     <TextView
                         android:id="@+id/txtMinis4"
@@ -140,7 +140,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/ic_launcher"
+                        android:src="@mipmap/charicon"
                         android:visibility="visible" />
 
                     <TextView
@@ -162,7 +162,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@mipmap/charicon" />
 
                     <TextView
                         android:id="@+id/txtSenador2"
@@ -183,7 +183,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@mipmap/charicon" />
 
                     <TextView
                         android:id="@+id/txtSenador3"
@@ -203,7 +203,7 @@
                         android:id="@+id/imgSenador4"
                         android:layout_width="match_parent"
                         android:layout_height="24dp"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@mipmap/charicon" />
 
                     <TextView
                         android:id="@+id/txtSenador4"
@@ -230,7 +230,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/ic_launcher"
+                        android:src="@mipmap/charicon"
                         android:visibility="visible" />
 
                     <TextView
@@ -252,7 +252,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@mipmap/charicon" />
 
                     <TextView
                         android:id="@+id/txtGovernador2"
@@ -273,7 +273,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@mipmap/charicon" />
 
                     <TextView
                         android:id="@+id/txtGovernador3"
@@ -293,7 +293,7 @@
                         android:id="@+id/imgGovernador4"
                         android:layout_width="match_parent"
                         android:layout_height="25dp"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@mipmap/charicon" />
 
                     <TextView
                         android:id="@+id/txtGovernador4"
@@ -322,7 +322,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/ic_launcher"
+                        android:src="@mipmap/charicon"
                         android:visibility="visible" />
 
                     <TextView
@@ -344,7 +344,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@mipmap/charicon" />
 
                     <TextView
                         android:id="@+id/txtPrefeito2"
@@ -365,7 +365,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@mipmap/charicon" />
 
                     <TextView
                         android:id="@+id/txtPrefeito3"
@@ -385,7 +385,7 @@
                         android:id="@+id/imgPrefeito4"
                         android:layout_width="match_parent"
                         android:layout_height="26dp"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@mipmap/charicon" />
 
                     <TextView
                         android:id="@+id/txtPrefeito4"
@@ -412,7 +412,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/ic_launcher"
+                        android:src="@mipmap/charicon"
                         android:visibility="visible" />
 
                     <TextView
@@ -434,7 +434,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@mipmap/charicon" />
 
                     <TextView
                         android:id="@+id/txtVereador2"
@@ -455,7 +455,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@mipmap/charicon" />
 
                     <TextView
                         android:id="@+id/txtVereador3"
@@ -475,7 +475,7 @@
                         android:id="@+id/imgVereador4"
                         android:layout_width="match_parent"
                         android:layout_height="23dp"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@mipmap/charicon" />
 
                     <TextView
                         android:id="@+id/txtVereador4"
@@ -502,7 +502,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/ic_launcher"
+                        android:src="@mipmap/charicon"
                         android:visibility="visible" />
 
                     <TextView
@@ -524,7 +524,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@mipmap/charicon" />
 
                     <TextView
                         android:id="@+id/txtPovo2"
@@ -545,7 +545,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@mipmap/charicon" />
 
                     <TextView
                         android:id="@+id/txtPovo3"
@@ -565,7 +565,7 @@
                         android:id="@+id/imgPovo4"
                         android:layout_width="match_parent"
                         android:layout_height="22dp"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@mipmap/charicon" />
 
                     <TextView
                         android:id="@+id/txtPovo4"
@@ -604,79 +604,116 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/button20"
+                    android:id="@+id/btnCandidato1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_bg"
+                    android:fontFamily="@font/latoblackitalic"
                     android:text="Candidato" />
 
                 <Button
-                    android:id="@+id/button21"
+                    android:id="@+id/btnCandidato2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_bg"
+                    android:fontFamily="@font/latoblackitalic"
                     android:text="Candidato" />
 
                 <Button
-                    android:id="@+id/button22"
+                    android:id="@+id/btnCandidato3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_bg"
+                    android:fontFamily="@font/latoblackitalic"
                     android:text="Candidato" />
 
                 <Button
-                    android:id="@+id/button23"
+                    android:id="@+id/btnCandidato4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_bg"
+                    android:fontFamily="@font/latoblackitalic"
                     android:text="Candidato" />
 
                 <Button
-                    android:id="@+id/button24"
+                    android:id="@+id/btnCandidato5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_bg"
+                    android:fontFamily="@font/latoblackitalic"
                     android:text="Candidato" />
 
                 <Button
-                    android:id="@+id/button25"
+                    android:id="@+id/btnCandidato6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_bg"
+                    android:fontFamily="@font/latoblackitalic"
                     android:text="Candidato" />
 
                 <Button
-                    android:id="@+id/button26"
+                    android:id="@+id/btnCandidato7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_bg"
+                    android:fontFamily="@font/latoblackitalic"
                     android:text="Candidato" />
             </LinearLayout>
         </LinearLayout>
     </HorizontalScrollView>
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/txtAguardando"
         android:layout_width="293dp"
         android:layout_height="54dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Aguardando Votação"
+        android:textAlignment="center"
         android:textColor="#E84D5B"
         android:textSize="30sp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+        app:layout_constraintVertical_bias="0.4" />
+
+    <TextView
+        android:id="@+id/txtVez"
+        android:layout_width="293dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Vez de: Jogador"
+        android:textAlignment="center"
+        android:textColor="#E84D5B"
+        android:textSize="30sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+        app:layout_constraintVertical_bias="0.794" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="74dp"
         android:layout_height="46dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -686,7 +723,7 @@
             android:id="@+id/imgPresidente"
             android:layout_width="match_parent"
             android:layout_height="26dp"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@mipmap/charicon" />
 
         <TextView
             android:id="@+id/txtPresidente"
