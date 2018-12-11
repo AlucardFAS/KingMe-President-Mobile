@@ -619,7 +619,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/pop_bg"
-                    android:fontFamily="@font/latoblackitalic"
+                    android:fontFamily="@font/latoitalic"
                     android:text="Candidato" />
 
             </LinearLayout>
@@ -642,7 +642,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/pop_bg"
-                    android:fontFamily="@font/latoblackitalic"
+                    android:fontFamily="@font/latoitalic"
                     android:text="Candidato" />
 
             </LinearLayout>
@@ -665,7 +665,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/pop_bg"
-                    android:fontFamily="@font/latoblackitalic"
+                    android:fontFamily="@font/latoitalic"
                     android:text="Candidato" />
 
             </LinearLayout>
@@ -689,7 +689,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/pop_bg"
-                    android:fontFamily="@font/latoblackitalic"
+                    android:fontFamily="@font/latoitalic"
                     android:text="Candidato" />
             </LinearLayout>
 
@@ -712,7 +712,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/pop_bg"
-                    android:fontFamily="@font/latoblackitalic"
+                    android:fontFamily="@font/latoitalic"
                     android:text="Candidato" />
             </LinearLayout>
 
@@ -735,7 +735,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/pop_bg"
-                    android:fontFamily="@font/latoblackitalic"
+                    android:fontFamily="@font/latoitalic"
                     android:text="Candidato" />
             </LinearLayout>
 
@@ -758,7 +758,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/pop_bg"
-                    android:fontFamily="@font/latoblackitalic"
+                    android:fontFamily="@font/latoitalic"
                     android:text="Candidato" />
             </LinearLayout>
         </LinearLayout>
