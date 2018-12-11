@@ -665,6 +665,60 @@
                     android:background="@drawable/pop_bg"
                     android:fontFamily="@font/latoblackitalic"
                     android:text="Candidato" />
+
+                <Button
+                    android:id="@+id/btnCandidato8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/pop_bg"
+                    android:fontFamily="@font/latoblackitalic"
+                    android:text="Candidato" />
+
+                <Button
+                    android:id="@+id/btnCandidato9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/pop_bg"
+                    android:fontFamily="@font/latoblackitalic"
+                    android:text="Candidato" />
+
+                <Button
+                    android:id="@+id/btnCandidato10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/pop_bg"
+                    android:fontFamily="@font/latoblackitalic"
+                    android:text="Candidato" />
+
+                <Button
+                    android:id="@+id/btnCandidato11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/pop_bg"
+                    android:fontFamily="@font/latoblackitalic"
+                    android:text="Candidato" />
+
+                <Button
+                    android:id="@+id/btnCandidato12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/pop_bg"
+                    android:fontFamily="@font/latoblackitalic"
+                    android:text="Candidato" />
+
+                <Button
+                    android:id="@+id/btnCandidato13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/pop_bg"
+                    android:fontFamily="@font/latoblackitalic"
+                    android:text="Candidato" />
             </LinearLayout>
         </LinearLayout>
     </HorizontalScrollView>

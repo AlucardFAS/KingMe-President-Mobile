@@ -3,6 +3,7 @@ package com.dfgv.presidenciaveis;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.SharedPreferences;
+import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 
 import com.dfgv.presidenciaveis.api.APIPartida;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -42,12 +44,149 @@ public class Principal extends Activity {
     Retrofit retrofit;
     APIPartida api;
 
+    //LISTAS DE IMAGEVIEWS E TEXTVIEWS
+    List<List<ImageView>> imageViews;
+    List<List<TextView>> textViews;
+    //endregion
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);//aqui apaga as parada de título da janela do PopUp
         setContentView(R.layout.activity_principal);
+
+        //region declaration list
+        imageViews = new ArrayList<List<ImageView>>();
+        textViews = new ArrayList<List<TextView>>();
+
+        for(int x =0; x <7; x++)
+        {
+            imageViews.add(new ArrayList<ImageView>());
+        }
+
+        ImageView view = findViewById(R.id.imgPovo1);
+        imageViews.get(0).add(view);
+        view = findViewById(R.id.imgPovo2);
+        imageViews.get(0).add(view);
+        view = findViewById(R.id.imgPovo3);
+        imageViews.get(0).add(view);
+        view = findViewById(R.id.imgPovo4);
+        imageViews.get(0).add(view);
+
+        view = findViewById(R.id.imgVereador1);
+        imageViews.get(1).add(view);
+        view = findViewById(R.id.imgVereador2);
+        imageViews.get(1).add(view);
+        view = findViewById(R.id.imgVereador3);
+        imageViews.get(1).add(view);
+        view = findViewById(R.id.imgVereador4);
+        imageViews.get(1).add(view);
+
+        view = findViewById(R.id.imgPrefeito1);
+        imageViews.get(2).add(view);
+        view = findViewById(R.id.imgPrefeito2);
+        imageViews.get(2).add(view);
+        view = findViewById(R.id.imgPrefeito3);
+        imageViews.get(2).add(view);
+        view = findViewById(R.id.imgPrefeito4);
+        imageViews.get(2).add(view);
+
+        view = findViewById(R.id.imgGovernador1);
+        imageViews.get(3).add(view);
+        view = findViewById(R.id.imgGovernador2);
+        imageViews.get(3).add(view);
+        view = findViewById(R.id.imgGovernador3);
+        imageViews.get(3).add(view);
+        view = findViewById(R.id.imgGovernador4);
+        imageViews.get(3).add(view);
+
+        view = findViewById(R.id.imgSenador1);
+        imageViews.get(4).add(view);
+        view = findViewById(R.id.imgSenador2);
+        imageViews.get(4).add(view);
+        view = findViewById(R.id.imgSenador3);
+        imageViews.get(4).add(view);
+        view = findViewById(R.id.imgSenador4);
+        imageViews.get(4).add(view);
+
+        view = findViewById(R.id.imgMinis1);
+        imageViews.get(5).add(view);
+        view = findViewById(R.id.imgMinis2);
+        imageViews.get(5).add(view);
+        view = findViewById(R.id.imgMinis3);
+        imageViews.get(5).add(view);
+        view = findViewById(R.id.imgMinis4);
+        imageViews.get(5).add(view);
+
+        view = findViewById(R.id.imgPresidente);
+        imageViews.get(6).add(view);
+
+        ////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////
+
+        for(int x =0; x <7; x++)
+        {
+            textViews.add(new ArrayList<TextView>());
+        }
+
+        TextView viewText = findViewById(R.id.txtPovo1);
+        textViews.get(0).add(viewText);
+        viewText = findViewById(R.id.txtPovo2);
+        textViews.get(0).add(viewText);
+        viewText = findViewById(R.id.txtPovo3);
+        textViews.get(0).add(viewText);
+        viewText = findViewById(R.id.txtPovo4);
+        textViews.get(0).add(viewText);
+
+        viewText = findViewById(R.id.txtVereador1);
+        textViews.get(1).add(viewText);
+        viewText = findViewById(R.id.txtVereador2);
+        textViews.get(1).add(viewText);
+        viewText = findViewById(R.id.txtVereador3);
+        textViews.get(1).add(viewText);
+        viewText = findViewById(R.id.txtVereador4);
+        textViews.get(1).add(viewText);
+
+        viewText = findViewById(R.id.txtPrefeito1);
+        textViews.get(2).add(viewText);
+        viewText = findViewById(R.id.txtPrefeito2);
+        textViews.get(2).add(viewText);
+        viewText = findViewById(R.id.txtPrefeito3);
+        textViews.get(2).add(viewText);
+        viewText = findViewById(R.id.txtPrefeito4);
+        textViews.get(2).add(viewText);
+
+        viewText = findViewById(R.id.txtGovernador1);
+        textViews.get(3).add(viewText);
+        viewText = findViewById(R.id.txtGovernador2);
+        textViews.get(3).add(viewText);
+        viewText = findViewById(R.id.txtGovernador3);
+        textViews.get(3).add(viewText);
+        viewText = findViewById(R.id.txtGovernador4);
+        textViews.get(3).add(viewText);
+
+        viewText = findViewById(R.id.txtSenador1);
+        textViews.get(4).add(viewText);
+        viewText = findViewById(R.id.txtSenador2);
+        textViews.get(4).add(viewText);
+        viewText = findViewById(R.id.txtSenador3);
+        textViews.get(4).add(viewText);
+        viewText = findViewById(R.id.txtSenador4);
+        textViews.get(4).add(viewText);
+
+        viewText = findViewById(R.id.txtMinis1);
+        textViews.get(5).add(viewText);
+        viewText = findViewById(R.id.txtMinis2);
+        textViews.get(5).add(viewText);
+        viewText = findViewById(R.id.txtMinis3);
+        textViews.get(5).add(viewText);
+        viewText = findViewById(R.id.txtMinis4);
+        textViews.get(5).add(viewText);
+
+        viewText = findViewById(R.id.txtPresidente);
+        textViews.get(6).add(viewText);
+
+        //endregion
 
 
         SharedPreferences pref = getApplicationContext().getSharedPreferences("jogo", 0); // 0 - for private mode
@@ -77,22 +216,6 @@ public class Principal extends Activity {
         partida.setSenha(senhaJogo);
 
 
-        //region FindView
-        //container = findViewById(R.id.containerPrincipal);
-
-        imgViewMinis1 = findViewById(R.id.imgMinis1);
-        imgViewMinis2 = findViewById(R.id.imgMinis2);
-        imgViewMinis3 = findViewById(R.id.imgMinis3);
-        imgViewMinis4 = findViewById(R.id.imgMinis4);
-
-        txtMinis1 = findViewById(R.id.txtMinis1);
-        txtMinis2 = findViewById(R.id.txtMinis2);
-        txtMinis3 = findViewById(R.id.txtMinis3);
-        txtMinis4 = findViewById(R.id.txtMinis4);
-
-
-        imgViewMinis1.setVisibility(imgViewMinis1.INVISIBLE);
-
         retrofit = new Retrofit.Builder()
                 .baseUrl("http://viacep.com.br/ws/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -107,7 +230,7 @@ public class Principal extends Activity {
     }
 
 
-    void posicionarPersonagem(Integer setor, String personagem) {
+    void posicionarPersonagem(Long setor, String personagem) {
 
         Call<List<Setor>> call = api.posicionarPersonagem(setor, personagem, jogador);
 
