@@ -26,7 +26,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:background="#F5ECD9"
+            android:background="@drawable/pop_border"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -585,23 +585,33 @@
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        android:layout_height="116dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtAguardando"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingRight="5dp">
+
+                <ImageView
+                    android:id="@+id/button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@mipmap/capa" />
 
                 <Button
                     android:id="@+id/btnCandidato1"
@@ -612,6 +622,20 @@
                     android:fontFamily="@font/latoblackitalic"
                     android:text="Candidato" />
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingRight="5dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@mipmap/capa" />
+
                 <Button
                     android:id="@+id/btnCandidato2"
                     android:layout_width="wrap_content"
@@ -621,15 +645,43 @@
                     android:fontFamily="@font/latoblackitalic"
                     android:text="Candidato" />
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingRight="5dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@mipmap/capa" />
+
                 <Button
                     android:id="@+id/btnCandidato3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:alpha="1"
                     android:background="@drawable/pop_bg"
                     android:fontFamily="@font/latoblackitalic"
                     android:text="Candidato" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingRight="5dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:cropToPadding="false"
+                    android:src="@mipmap/capa" />
 
                 <Button
                     android:id="@+id/btnCandidato4"
@@ -639,6 +691,20 @@
                     android:background="@drawable/pop_bg"
                     android:fontFamily="@font/latoblackitalic"
                     android:text="Candidato" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingRight="5dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:cropToPadding="false"
+                    android:src="@mipmap/capa" />
 
                 <Button
                     android:id="@+id/btnCandidato5"
@@ -648,6 +714,20 @@
                     android:background="@drawable/pop_bg"
                     android:fontFamily="@font/latoblackitalic"
                     android:text="Candidato" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingRight="5dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:cropToPadding="false"
+                    android:src="@mipmap/capa" />
 
                 <Button
                     android:id="@+id/btnCandidato6"
@@ -657,63 +737,23 @@
                     android:background="@drawable/pop_bg"
                     android:fontFamily="@font/latoblackitalic"
                     android:text="Candidato" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:cropToPadding="false"
+                    android:src="@mipmap/capa" />
+
 
                 <Button
                     android:id="@+id/btnCandidato7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/pop_bg"
-                    android:fontFamily="@font/latoblackitalic"
-                    android:text="Candidato" />
-
-                <Button
-                    android:id="@+id/btnCandidato8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/pop_bg"
-                    android:fontFamily="@font/latoblackitalic"
-                    android:text="Candidato" />
-
-                <Button
-                    android:id="@+id/btnCandidato9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/pop_bg"
-                    android:fontFamily="@font/latoblackitalic"
-                    android:text="Candidato" />
-
-                <Button
-                    android:id="@+id/btnCandidato10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/pop_bg"
-                    android:fontFamily="@font/latoblackitalic"
-                    android:text="Candidato" />
-
-                <Button
-                    android:id="@+id/btnCandidato11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/pop_bg"
-                    android:fontFamily="@font/latoblackitalic"
-                    android:text="Candidato" />
-
-                <Button
-                    android:id="@+id/btnCandidato12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/pop_bg"
-                    android:fontFamily="@font/latoblackitalic"
-                    android:text="Candidato" />
-
-                <Button
-                    android:id="@+id/btnCandidato13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
