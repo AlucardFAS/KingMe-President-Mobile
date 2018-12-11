@@ -32,7 +32,7 @@ public interface APIPartida {
     Call<List<Setor>> getListaDeSetores();
 
     @POST("/kingme/rest/v1/personagem/{setorId}/{personagem}/")
-    Call<List<Setor>> posicionarPersonagem(@Path("setorId") Long id, @Path("personagem") String personagem);
+    Call<List<Setor>> posicionarPersonagem(@Path("setorId") Long id, @Path("personagem") String personagem, @Body Jogador jogador);
 
     @GET("/kingme/rest/v1/jogador/{vez}/")
     Call<Jogador> getJogadorDaVez(@Path("vez") Integer vez);
