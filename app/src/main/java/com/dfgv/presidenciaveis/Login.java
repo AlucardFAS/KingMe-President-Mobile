@@ -43,7 +43,7 @@ public class Login extends AppCompatActivity {
 
                     Intent intent = new Intent(Login.this, EscolherJogoActivity.class);
                     intent.putExtra("nomeJogador", nome.getText().toString());
-                    intent.putExtra("atividadeJogo", "com.dfgv.presidenciaveis.home");
+                    intent.putExtra("atividadeJogo", "com.dfgv.presidenciaveis.Principal");
                     intent.putExtra("criar", false);
 
                     startActivity(intent);
