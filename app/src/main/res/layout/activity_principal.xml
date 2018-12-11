@@ -613,12 +613,11 @@
                     android:layout_marginBottom="5dp"
                     android:src="@mipmap/capa" />
 
-                <Button
+                <TextView
                     android:id="@+id/btnCandidato1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_bg"
                     android:fontFamily="@font/latoitalic"
                     android:text="Candidato" />
 
@@ -636,12 +635,11 @@
                     android:layout_marginBottom="5dp"
                     android:src="@mipmap/capa" />
 
-                <Button
+                <TextView
                     android:id="@+id/btnCandidato2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_bg"
                     android:fontFamily="@font/latoitalic"
                     android:text="Candidato" />
 
@@ -659,12 +657,11 @@
                     android:layout_marginBottom="5dp"
                     android:src="@mipmap/capa" />
 
-                <Button
+                <TextView
                     android:id="@+id/btnCandidato3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_bg"
                     android:fontFamily="@font/latoitalic"
                     android:text="Candidato" />
 
@@ -683,12 +680,11 @@
                     android:cropToPadding="false"
                     android:src="@mipmap/capa" />
 
-                <Button
+                <TextView
                     android:id="@+id/btnCandidato4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_bg"
                     android:fontFamily="@font/latoitalic"
                     android:text="Candidato" />
             </LinearLayout>
@@ -706,12 +702,11 @@
                     android:cropToPadding="false"
                     android:src="@mipmap/capa" />
 
-                <Button
+                <TextView
                     android:id="@+id/btnCandidato5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_bg"
                     android:fontFamily="@font/latoitalic"
                     android:text="Candidato" />
             </LinearLayout>
@@ -729,12 +724,11 @@
                     android:cropToPadding="false"
                     android:src="@mipmap/capa" />
 
-                <Button
+                <TextView
                     android:id="@+id/btnCandidato6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_bg"
                     android:fontFamily="@font/latoitalic"
                     android:text="Candidato" />
             </LinearLayout>
@@ -752,12 +746,11 @@
                     android:src="@mipmap/capa" />
 
 
-                <Button
+                <TextView
                     android:id="@+id/btnCandidato7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_bg"
                     android:fontFamily="@font/latoitalic"
                     android:text="Candidato" />
             </LinearLayout>
