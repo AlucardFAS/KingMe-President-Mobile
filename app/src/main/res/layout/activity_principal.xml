@@ -9,11 +9,12 @@
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout3"
-        android:layout_width="410dp"
-        android:layout_height="309dp"
+        android:layout_width="365dp"
+        android:layout_height="340dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:background="@drawable/pop_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +27,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:background="#F5ECD9"
+            android:background="@drawable/pop_tabuleiro"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -764,21 +765,16 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="74dp"
-        android:layout_height="46dp"
+        android:layout_width="124dp"
+        android:layout_height="37dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:background="@drawable/pop_selecionar"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/imgPresidente"
-            android:layout_width="match_parent"
-            android:layout_height="26dp"
-            android:src="@mipmap/charicon" />
 
         <TextView
             android:id="@+id/txtPresidente"

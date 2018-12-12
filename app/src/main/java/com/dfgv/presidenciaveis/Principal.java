@@ -163,7 +163,7 @@ public class Principal extends Activity {
         view = findViewById(R.id.imgMinis4);
         imageViews.get(5).add(view);
 
-        view = findViewById(R.id.imgPresidente);
+        //view = findViewById(R.id.imgPresidente);
         imageViews.get(6).add(view);
 
         ////////////////////////////////////////////////////////////////////////
