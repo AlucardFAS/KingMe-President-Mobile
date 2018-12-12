@@ -67,6 +67,7 @@ public class Principal extends Activity {
     List<Button> buttons;
     List<List<ImageView>> imageViews;
     List<List<TextView>> textViews;
+    TextView txtPresidente;
     //endregion
 
 
@@ -167,8 +168,7 @@ public class Principal extends Activity {
         view = findViewById(R.id.imgMinis4);
         imageViews.get(5).add(view);
 
-        //view = findViewById(R.id.imgPresidente);
-        imageViews.get(6).add(view);
+        txtPresidente = findViewById(R.id.txtPresidente);
 
         ////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
@@ -232,8 +232,8 @@ public class Principal extends Activity {
         viewText = findViewById(R.id.txtMinis4);
         textViews.get(5).add(viewText);
 
-        viewText = findViewById(R.id.txtPresidente);
-        textViews.get(6).add(viewText);
+        //viewText = findViewById(R.id.txtPresidente);
+        //textViews.get(6).add(viewText);
 
         //endregion
 

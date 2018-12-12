@@ -23,7 +23,7 @@
         <LinearLayout
             android:id="@+id/setor"
             android:layout_width="341dp"
-            android:layout_height="294dp"
+            android:layout_height="298dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
@@ -68,7 +68,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/latoblackitalic"
                         android:textAlignment="center"
-                        android:visibility="visible" />
+                        android:visibility="invisible" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -137,8 +137,8 @@
 
                     <ImageView
                         android:id="@+id/imgMinis4"
-                        android:layout_width="65dp"
-                        android:layout_height="15dp"
+                        android:layout_width="95dp"
+                        android:layout_height="26dp"
                         android:scaleX="0.7"
                         android:scaleY="0.7"
                         android:src="@mipmap/charicon"
@@ -146,7 +146,7 @@
 
                     <TextView
                         android:id="@+id/txtMinis4"
-                        android:layout_width="64dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/latoblackitalic"
                         android:textAlignment="center"
@@ -267,7 +267,7 @@
                     <TextView
                         android:id="@+id/txtSenador4"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:fontFamily="@font/latoblackitalic"
                         android:scaleX="0.8"
                         android:scaleY="0.8"
@@ -379,7 +379,7 @@
                     <ImageView
                         android:id="@+id/imgGovernador4"
                         android:layout_width="match_parent"
-                        android:layout_height="25dp"
+                        android:layout_height="22dp"
                         android:scaleX="0.7"
                         android:scaleY="0.7"
                         android:src="@mipmap/charicon"
@@ -388,7 +388,7 @@
                     <TextView
                         android:id="@+id/txtGovernador4"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:fontFamily="@font/latoblackitalic"
                         android:textAlignment="center"
                         android:visibility="invisible" />
@@ -510,7 +510,7 @@
                     <TextView
                         android:id="@+id/txtPrefeito4"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="29dp"
                         android:fontFamily="@font/latoblackitalic"
                         android:textAlignment="center"
                         android:visibility="invisible" />
