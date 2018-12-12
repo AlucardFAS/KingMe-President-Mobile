@@ -21,6 +21,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <LinearLayout
+            android:id="@+id/setor"
             android:layout_width="341dp"
             android:layout_height="298dp"
             android:layout_marginStart="8dp"
@@ -29,22 +30,25 @@
             android:layout_marginBottom="8dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintCircleRadius="50dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0">
+            app:layout_constraintVertical_bias="1.0">
 
             <LinearLayout
+                android:id="@+id/col1"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:backgroundTint="@color/design_default_color_primary_dark"
+                android:background="@color/colorPrimary"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_tabuleiro"
+                    android:accessibilityLiveRegion="1"
+                    android:background="@color/colorPrimary"
                     android:orientation="vertical">
 
                     <ImageView
@@ -64,14 +68,15 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/latoblackitalic"
                         android:textAlignment="center"
-                        android:visibility="visible" />
+                        android:visibility="invisible" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_tabuleiro"
+                    android:accessibilityLiveRegion="1"
+                    android:background="@color/colorPrimary"
                     android:orientation="vertical">
 
                     <ImageView
@@ -98,7 +103,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_tabuleiro"
+                    android:accessibilityLiveRegion="1"
+                    android:background="@color/colorPrimary"
                     android:orientation="vertical">
 
                     <ImageView
@@ -125,13 +131,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_tabuleiro"
+                    android:accessibilityLiveRegion="1"
+                    android:background="@color/colorPrimary"
                     android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/imgMinis4"
-                        android:layout_width="65dp"
-                        android:layout_height="15dp"
+                        android:layout_width="95dp"
+                        android:layout_height="26dp"
                         android:scaleX="0.7"
                         android:scaleY="0.7"
                         android:src="@mipmap/charicon"
@@ -139,7 +146,7 @@
 
                     <TextView
                         android:id="@+id/txtMinis4"
-                        android:layout_width="64dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/latoblackitalic"
                         android:textAlignment="center"
@@ -149,15 +156,19 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/col2"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
+                android:alpha="0.75"
+                android:background="@color/colorPrimary"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_tabuleiro"
+                    android:accessibilityLiveRegion="1"
+                    android:background="@color/colorPrimary"
                     android:orientation="vertical">
 
                     <ImageView
@@ -184,7 +195,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_tabuleiro"
+                    android:accessibilityLiveRegion="1"
+                    android:background="@color/colorPrimary"
                     android:orientation="vertical">
 
                     <ImageView
@@ -211,7 +223,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_tabuleiro"
+                    android:accessibilityLiveRegion="1"
+                    android:background="@color/colorPrimary"
                     android:orientation="vertical">
 
                     <ImageView
@@ -238,7 +251,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_tabuleiro"
+                    android:accessibilityLiveRegion="1"
+                    android:background="@color/colorPrimary"
                     android:orientation="vertical">
 
                     <ImageView
@@ -253,7 +267,7 @@
                     <TextView
                         android:id="@+id/txtSenador4"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:fontFamily="@font/latoblackitalic"
                         android:scaleX="0.8"
                         android:scaleY="0.8"
@@ -264,15 +278,18 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/col3"
                 android:layout_width="match_parent"
                 android:layout_height="46dp"
+                android:background="@color/colorPrimary"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_tabuleiro"
+                    android:accessibilityLiveRegion="1"
+                    android:background="@color/colorPrimary"
                     android:orientation="vertical">
 
                     <ImageView
@@ -299,7 +316,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_tabuleiro"
+                    android:accessibilityLiveRegion="1"
+                    android:background="@color/colorPrimary"
                     android:orientation="vertical">
 
                     <ImageView
@@ -326,7 +344,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_tabuleiro"
+                    android:accessibilityLiveRegion="1"
+                    android:background="@color/colorPrimary"
                     android:orientation="vertical">
 
                     <ImageView
@@ -353,13 +372,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_tabuleiro"
+                    android:accessibilityLiveRegion="1"
+                    android:background="@color/colorPrimary"
                     android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/imgGovernador4"
                         android:layout_width="match_parent"
-                        android:layout_height="25dp"
+                        android:layout_height="22dp"
                         android:scaleX="0.7"
                         android:scaleY="0.7"
                         android:src="@mipmap/charicon"
@@ -368,7 +388,7 @@
                     <TextView
                         android:id="@+id/txtGovernador4"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:fontFamily="@font/latoblackitalic"
                         android:textAlignment="center"
                         android:visibility="invisible" />
@@ -379,15 +399,19 @@
 
 
             <LinearLayout
+                android:id="@+id/col4"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:alpha="0.75"
+                android:background="@color/colorPrimary"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_tabuleiro"
+                    android:accessibilityLiveRegion="1"
+                    android:background="@color/colorPrimary"
                     android:orientation="vertical">
 
                     <ImageView
@@ -414,7 +438,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_tabuleiro"
+                    android:accessibilityLiveRegion="1"
+                    android:background="@color/colorPrimary"
                     android:orientation="vertical">
 
                     <ImageView
@@ -441,7 +466,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_tabuleiro"
+                    android:accessibilityLiveRegion="1"
+                    android:background="@color/colorPrimary"
                     android:orientation="vertical">
 
                     <ImageView
@@ -468,7 +494,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_tabuleiro"
+                    android:accessibilityLiveRegion="1"
+                    android:background="@color/colorPrimary"
                     android:orientation="vertical">
 
                     <ImageView
@@ -483,7 +510,7 @@
                     <TextView
                         android:id="@+id/txtPrefeito4"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="29dp"
                         android:fontFamily="@font/latoblackitalic"
                         android:textAlignment="center"
                         android:visibility="invisible" />
@@ -492,15 +519,18 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/col5"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
+                android:background="@color/colorPrimary"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_tabuleiro"
+                    android:accessibilityLiveRegion="1"
+                    android:background="@color/colorPrimary"
                     android:orientation="vertical">
 
                     <ImageView
@@ -527,7 +557,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_tabuleiro"
+                    android:accessibilityLiveRegion="1"
+                    android:background="@color/colorPrimary"
                     android:orientation="vertical">
 
                     <ImageView
@@ -554,7 +585,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_tabuleiro"
+                    android:accessibilityLiveRegion="1"
+                    android:background="@color/colorPrimary"
                     android:orientation="vertical">
 
                     <ImageView
@@ -581,7 +613,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_tabuleiro"
+                    android:accessibilityLiveRegion="1"
+                    android:background="@color/colorPrimary"
                     android:orientation="vertical">
 
                     <ImageView
@@ -605,15 +638,19 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/col6"
                 android:layout_width="match_parent"
                 android:layout_height="46dp"
+                android:alpha="0.75"
+                android:background="@color/colorPrimary"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_tabuleiro"
+                    android:accessibilityLiveRegion="1"
+                    android:background="@color/colorPrimary"
                     android:orientation="vertical">
 
                     <ImageView
@@ -640,7 +677,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_tabuleiro"
+                    android:accessibilityLiveRegion="1"
+                    android:background="@color/colorPrimary"
                     android:orientation="vertical">
 
                     <ImageView
@@ -667,7 +705,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_tabuleiro"
+                    android:accessibilityLiveRegion="1"
+                    android:background="@color/colorPrimary"
                     android:orientation="vertical">
 
                     <ImageView
@@ -694,7 +733,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/pop_tabuleiro"
+                    android:accessibilityLiveRegion="1"
+                    android:background="@color/colorPrimary"
                     android:orientation="vertical">
 
                     <ImageView

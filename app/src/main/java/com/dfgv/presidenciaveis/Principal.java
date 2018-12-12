@@ -69,6 +69,7 @@ public class Principal extends Activity {
     List<List<TextView>> textViews;
 
     TextView partidaEstado;
+    TextView txtPresidente;
     //endregion
 
 
@@ -169,8 +170,7 @@ public class Principal extends Activity {
         view = findViewById(R.id.imgMinis4);
         imageViews.get(5).add(view);
 
-        //view = findViewById(R.id.imgPresidente);
-        imageViews.get(6).add(view);
+        txtPresidente = findViewById(R.id.txtPresidente);
 
         ////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
@@ -234,8 +234,8 @@ public class Principal extends Activity {
         viewText = findViewById(R.id.txtMinis4);
         textViews.get(5).add(viewText);
 
-        viewText = findViewById(R.id.txtPresidente);
-        textViews.get(6).add(viewText);
+        //viewText = findViewById(R.id.txtPresidente);
+        //textViews.get(6).add(viewText);
 
         //endregion
 
@@ -435,41 +435,58 @@ public class Principal extends Activity {
 
                         Integer x = Math.toIntExact(novoSetor.getId());
 
-                        if(x > 5) x = 6;
+                        if(x > 5) {
 
-                        List<String> personagensNoSetor = novoSetor.getPersonagens();
+                            if(!novoSetor.getPersonagens().isEmpty()) {
 
-                        for(int y = 0; y < 4; y++) {
+                                String first = novoSetor.getPersonagens().get(0);
 
-                            if(y+1 > personagensNoSetor.size()) {
+                                for (String personagem : personagens) {
 
-                                textViews.get(x).get(y).setVisibility(View.INVISIBLE);
-                                imageViews.get(x).get(y).setVisibility(View.INVISIBLE);
-                            }
-
-                            else {
-
-                                String primeira = personagensNoSetor.get(y);
-
-                                for(String nome : personagens) {
-
-                                    if(nome.substring(0,1).equals(primeira)) {
-                                        textViews.get(x).get(y).setText(nome.toUpperCase());
-                                        textViews.get(x).get(y).setVisibility(View.VISIBLE);
+                                    if (personagem.substring(0, 1).equals(first)) {
+                                        txtPresidente.setText(first);
 
                                         break;
                                     }
                                 }
 
-                                imageViews.get(x).get(y).setVisibility(View.VISIBLE);
-
-                                if(favoritos.contains(personagens.get(y).substring(0,1)))
-                                    imageViews.get(x).get(y).setImageResource(R.mipmap.charicon_fav);
-
-                                else
-                                    imageViews.get(x).get(y).setImageResource(R.mipmap.charicon);
                             }
+                        }
 
+                        else {
+
+                            List<String> personagensNoSetor = novoSetor.getPersonagens();
+
+                            for (int y = 0; y < 4; y++) {
+
+                                if (y + 1 > personagensNoSetor.size()) {
+
+                                    textViews.get(x).get(y).setVisibility(View.INVISIBLE);
+                                    imageViews.get(x).get(y).setVisibility(View.INVISIBLE);
+                                } else {
+
+                                    String primeira = personagensNoSetor.get(y);
+
+                                    for (String nome : personagens) {
+
+                                        if (nome.substring(0, 1).equals(primeira)) {
+                                            textViews.get(x).get(y).setText(nome.toUpperCase());
+                                            textViews.get(x).get(y).setVisibility(View.VISIBLE);
+
+                                            break;
+                                        }
+                                    }
+
+                                    imageViews.get(x).get(y).setVisibility(View.VISIBLE);
+
+                                    if (favoritos.contains(personagens.get(y).substring(0, 1)))
+                                        imageViews.get(x).get(y).setImageResource(R.mipmap.charicon_fav);
+
+                                    else
+                                        imageViews.get(x).get(y).setImageResource(R.mipmap.charicon);
+                                }
+
+                            }
                         }
 
                     }
