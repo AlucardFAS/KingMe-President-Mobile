@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 public class PopUpSelecionar extends Activity {
 
+    //region componentes
     Button btnSenador;
     Button btnGovernador;
     Button btnPrefeito;
@@ -22,6 +23,7 @@ public class PopUpSelecionar extends Activity {
     Button btnCancelar;
     TextView txtCandidato1;
     TextView txtCandidato2;
+    //endregion
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +31,15 @@ public class PopUpSelecionar extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);//aqui apaga as parada de título da janela do PopUp
         setContentView(R.layout.activity_pop_up_selecionar);
 
+        //region declarações
         txtCandidato1 = findViewById(R.id.txtCandidatoSelecionar1);
         txtCandidato2 = findViewById(R.id.txtCandidatoSelecionar2);
+        btnSenador = findViewById(R.id.btnSenador);
+        btnCancelar = findViewById(R.id.btnCancelarSelecionar);
+        btnVereador = findViewById(R.id.btnVereador);
+        btnPrefeito = findViewById(R.id.btnPrefeito);
+        btnGovernador = findViewById(R.id.btnGovernador);
+        //endregion
 
         WindowManager.LayoutParams params = getWindow().getAttributes();
         params.gravity = Gravity.CENTER;
@@ -45,6 +54,7 @@ public class PopUpSelecionar extends Activity {
         txtCandidato1.setText(nomeCandidato);
         txtCandidato2.setText(nomeCandidato);
 
+        //region buttons
         btnSenador.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -87,6 +97,6 @@ public class PopUpSelecionar extends Activity {
                 finish();
             }
         });
-
+        //endregion
     }
 }
