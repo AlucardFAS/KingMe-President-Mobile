@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -23,6 +22,9 @@ public class PopUpSelecionar extends Activity {
     TextView txtCandidato1;
     TextView txtCandidato2;
 
+    String nomeCandidato;
+    Integer btnIndex;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +34,12 @@ public class PopUpSelecionar extends Activity {
         txtCandidato1 = findViewById(R.id.txtCandidatoSelecionar1);
         txtCandidato2 = findViewById(R.id.txtCandidatoSelecionar2);
 
+        btnSenador = findViewById(R.id.btnSenador);
+        btnPrefeito = findViewById(R.id.btnPrefeito);
+        btnGovernador = findViewById(R.id.btnGovernador);
+        btnVereador = findViewById(R.id.btnVereador);
+        btnCancelar = findViewById(R.id.btnCancelarSelecionar);
+
         WindowManager.LayoutParams params = getWindow().getAttributes();
         params.gravity = Gravity.CENTER;
         params.x = 0;
@@ -40,7 +48,8 @@ public class PopUpSelecionar extends Activity {
         getWindow().setAttributes(params);
         Intent i = getIntent();
 
-        String nomeCandidato = i.getStringExtra("nome");
+        nomeCandidato = i.getStringExtra("nome");
+        btnIndex = i.getIntExtra("buttonIndex", 0);
 
         txtCandidato1.setText(nomeCandidato);
         txtCandidato2.setText(nomeCandidato);
@@ -49,38 +58,54 @@ public class PopUpSelecionar extends Activity {
         {
             @Override
             public void onClick(View v){
-                Intent retorno = getIntent();
-                retorno.putExtra("setor", 4);
+                Intent retorno = new Intent();
+                retorno.putExtra("nome", nomeCandidato);
+                retorno.putExtra("setor", (long) 4);
+                retorno.putExtra("buttonIndex", btnIndex);
                 setResult(RESULT_OK, retorno);
+                finish();
             }
         });
+
         btnGovernador.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v){
-                Intent retorno = getIntent();
-                retorno.putExtra("setor", 3);
+                Intent retorno = new Intent();
+                retorno.putExtra("nome", nomeCandidato);
+                retorno.putExtra("setor", (long) 3);
+                retorno.putExtra("buttonIndex", btnIndex);
                 setResult(RESULT_OK, retorno);
+                finish();
             }
         });
+
         btnPrefeito.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v){
-                Intent retorno = getIntent();
-                retorno.putExtra("setor", 2);
+                Intent retorno = new Intent();
+                retorno.putExtra("nome", nomeCandidato);
+                retorno.putExtra("setor", (long) 2);
+                retorno.putExtra("buttonIndex", btnIndex);
                 setResult(RESULT_OK, retorno);
+                finish();
             }
         });
+
         btnVereador.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v){
-                Intent retorno = getIntent();
-                retorno.putExtra("setor", 1);
+                Intent retorno = new Intent();
+                retorno.putExtra("nome", nomeCandidato);
+                retorno.putExtra("setor", (long) 1);
+                retorno.putExtra("buttonIndex", btnIndex);
                 setResult(RESULT_OK, retorno);
+                finish();
             }
         });
+
         btnCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

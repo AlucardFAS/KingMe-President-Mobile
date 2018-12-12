@@ -32,12 +32,12 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/btnSenador"
+            android:id="@+id/btnVereador"
             android:layout_width="218dp"
             android:layout_height="49dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
             android:layout_marginBottom="44dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
             android:background="@drawable/pop_selecionar"
             android:fontFamily="@font/latoblackitalic"
             android:text="VEREADOR"
@@ -72,18 +72,18 @@
             android:fontFamily="@font/latoblackitalic"
             android:text="PREFEITO"
             android:textColor="#F5ECD9"
-            app:layout_constraintBottom_toTopOf="@+id/btnSenador"
+            app:layout_constraintBottom_toTopOf="@+id/btnVereador"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/btnVereador"
+            android:id="@+id/btnSenador"
             android:layout_width="218dp"
             android:layout_height="49dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="12dp"
             android:background="@drawable/pop_selecionar"
             android:fontFamily="@font/latoblackitalic"
             android:text="SENADOR"

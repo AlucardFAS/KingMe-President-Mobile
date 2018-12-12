@@ -4,6 +4,8 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
@@ -30,6 +32,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+
+import static com.dfgv.presidenciaveis.R.drawable.pop_selecionar;
 
 public class Principal extends Activity {
     private ViewGroup mensagens;
@@ -247,10 +251,10 @@ public class Principal extends Activity {
                 String senhaJogo = pref.getString("senhaJogo","");
 
                 //Para fins de teste
-                idJogador = "255";
-                senhaJogador = "5235B";
+                idJogador = "351";
+                senhaJogador = "B343C";
 
-                idJogo = "144";
+                idJogo = "197";
                 senhaJogo = "123456";
 
                 jogador = new Jogador();
@@ -301,6 +305,7 @@ public class Principal extends Activity {
                 }
 
                 getStatusPartida();
+                getTabuleiro();
 
                 //agenda a chamada da proxima atualização
                 refresher.postDelayed(rThis,taxaAtualizacaoEmSegundos * 1000);
@@ -397,11 +402,11 @@ public class Principal extends Activity {
 
                         if(x > 5) x = 6;
 
-                        List<String> personagens = novoSetor.getPersonagens();
+                        List<String> personagensNoSetor = novoSetor.getPersonagens();
 
                         for(int y = 0; y < 4; y++) {
 
-                            if(y+1 > personagens.size()) {
+                            if(y+1 > personagensNoSetor.size()) {
 
                                 textViews.get(x).get(y).setVisibility(View.INVISIBLE);
                                 imageViews.get(x).get(y).setVisibility(View.INVISIBLE);
@@ -409,10 +414,18 @@ public class Principal extends Activity {
 
                             else {
 
-                                String nome = personagens.get(y);
+                                String primeira = personagensNoSetor.get(y);
 
-                                textViews.get(x).get(y).setText(nome);
-                                textViews.get(x).get(y).setVisibility(View.VISIBLE);
+                                for(String nome : personagens) {
+
+                                    if(nome.substring(0,1).equals(primeira)) {
+                                        textViews.get(x).get(y).setText(nome.toUpperCase());
+                                        textViews.get(x).get(y).setVisibility(View.VISIBLE);
+
+                                        break;
+                                    }
+                                }
+
                                 imageViews.get(x).get(y).setVisibility(View.VISIBLE);
 
                                 if(favoritos.contains(personagens.get(y).substring(0,1)))
@@ -451,7 +464,7 @@ public class Principal extends Activity {
 
                         if(response.isSuccessful()) {
 
-                            if(statusDaRodada != res.getStatusRodado()) {
+                            if(!statusDaRodada.equals(res.getStatusRodado())) {
                                 statusDaRodada = res.getStatusRodado();
                                 atualizarEstadoDaPartida(res);
                             }
@@ -515,9 +528,24 @@ public class Principal extends Activity {
 
     }
 
+    void ajustarFavoritos() {
+
+        for(Button btn : buttons) {
+
+            String candidato = btn.getText().toString().substring(0,1);
+
+            if(favoritos.contains(candidato)) {
+                btn.setBackgroundResource(R.drawable.pop_selecionar);
+                btn.setTextColor(Color.parseColor("#F5ECD9"));
+
+            }
+        }
+
+    }
+
     void getTabuleiro() {
 
-        Call<List<Setor>> call = api.getTabuleiro(partida.getId());
+        Call<List<Setor>> call = api.getTabuleiro(jogador.getId());
 
         Callback<List<Setor>> callback =
                 new Callback<List<Setor>>() {
@@ -671,7 +699,12 @@ public class Principal extends Activity {
 
                         if(response.isSuccessful()) {
 
+                            carregouFavoritos = true;
                             favoritos = res;
+
+                            if(carregouPersonagens) {
+                                ajustarFavoritos();
+                            }
                         }
 
                     }
@@ -704,6 +737,10 @@ public class Principal extends Activity {
 
                             carregouPersonagens = true;
                             personagens = res;
+
+                            if(carregouFavoritos) {
+                                ajustarFavoritos();
+                            }
 
                             for(int x = 0; x < res.size(); x++) {
 
