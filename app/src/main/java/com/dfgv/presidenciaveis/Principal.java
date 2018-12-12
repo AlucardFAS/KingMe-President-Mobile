@@ -67,6 +67,8 @@ public class Principal extends Activity {
     List<Button> buttons;
     List<List<ImageView>> imageViews;
     List<List<TextView>> textViews;
+
+    TextView partidaEstado;
     //endregion
 
 
@@ -237,6 +239,8 @@ public class Principal extends Activity {
 
         //endregion
 
+
+
         Runnable r = new Runnable() {
 
             public void run() {
@@ -312,7 +316,13 @@ public class Principal extends Activity {
             }
         };
 
+        partidaEstado = findViewById(R.id.txtStatusJogador);
+        partidaEstado.setText("ESPERANDO SUA VEZ");
+
         new Thread(r).start();
+
+
+
 
     }
 
@@ -320,6 +330,7 @@ public class Principal extends Activity {
 
     void iniciarAVez() {
 
+        partidaEstado.setText("SUA VEZ!");
         turnoDoJogador = true;
 
         //POSICIONAR
@@ -342,6 +353,7 @@ public class Principal extends Activity {
 
     void terminarAVez() {
 
+        partidaEstado.setText("ESPERANDO SUA VEZ...");
         turnoDoJogador = false;
 
         //POSICIONAR
@@ -852,15 +864,12 @@ public class Principal extends Activity {
 
         if(!turnoDoJogador) return;
 
-        //TODO MOSTRAR POPUP DE VOTACAO
-
     }
 
     void mostrarPopUpDeSelecionar(Button btn) {
 
         if(!turnoDoJogador) return;
 
-        //TODO: FAZER O POPUP RESPONDER AO INTENT E VOLTAR A OPCAO NO MESMO
         Intent intent = new Intent(Principal.this, PopUpSelecionar.class);
         intent.putExtra("nome", btn.getText().toString());
         intent.putExtra("buttonIndex", buttons.indexOf(btn));
