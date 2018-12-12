@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -66,6 +67,8 @@ public class Principal extends Activity {
     Jogo partida;
     Retrofit retrofit;
     APIPartida api;
+
+    MediaPlayer mediaPlayer;
 
     List<Button> buttons;
     List<List<ImageView>> imageViews;
@@ -334,6 +337,9 @@ public class Principal extends Activity {
                 mostrarPlacar();
             }
         });
+
+        mediaPlayer = MediaPlayer.create(Principal.this, R.raw.burro);
+        mediaPlayer.start();
 
     }
 
@@ -934,6 +940,8 @@ public class Principal extends Activity {
             else  {
                 votarEmPersonagem("S");
             }
+
+            mediaPlayer.start();
         }
 
         else if(requestCode == 2) {
@@ -946,6 +954,8 @@ public class Principal extends Activity {
                 promoverPersonagem(personagem);
             }
 
+            mediaPlayer.start();
+
         }
 
         else if(requestCode == 3) {
@@ -956,6 +966,8 @@ public class Principal extends Activity {
 
             if(setor >= 0)
                 posicionarPersonagem(btn, setor, btn.getText().toString().substring(0, 1));
+            
+            mediaPlayer.start();
         }
 
         else if(requestCode == 4) {
