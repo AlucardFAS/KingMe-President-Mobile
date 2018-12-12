@@ -28,9 +28,6 @@ public interface APIPartida {
     @POST("/kingme/rest/v1/personagem/")
     Call<List<String>> getFavoritosDoJogador(@Body Jogador jogador);
 
-    @GET("/kingme/rest/v1/setor/")
-    Call<List<Setor>> getListaDeSetores();
-
     @POST("/kingme/rest/v1/personagem/{setorId}/{personagem}/")
     Call<List<Setor>> posicionarPersonagem(@Path("setorId") Long id, @Path("personagem") String personagem, @Body Jogador jogador);
 
@@ -46,6 +43,13 @@ public interface APIPartida {
     @GET("/kingme/rest/v1/jogo/tabuleiro/{idJogador}/")
     Call<List<Setor>> getTabuleiro(@Path("idJogador") Long id);
 
+    @GET("/kingme/rest/v1/personagem/")
+    Call<List<String>> getPersonagens();
 
+    @GET("/kingme/rest/v1/setor/")
+    Call<List<Setor>> getSetores();
+
+    @GET("/kingme/rest/v1/jogo/{idJogador}")
+    Call<Jogo> getPartidaStatus(@Path("idJogador") Long id);
 
 }

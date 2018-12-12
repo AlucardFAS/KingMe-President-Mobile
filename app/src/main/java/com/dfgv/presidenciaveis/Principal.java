@@ -2,20 +2,28 @@ package com.dfgv.presidenciaveis;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.Button;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.dfgv.presidenciaveis.api.APIPartida;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -27,24 +35,32 @@ public class Principal extends Activity {
     private ViewGroup mensagens;
 
     //region declarations
+    private Handler refresher = null;
+    private Runnable refresherRunner;
+
+    private Boolean turnoDoJogador = false;
+
     LinearLayout container;
 
-    ImageView imgViewMinis1;
-    ImageView imgViewMinis2;
-    ImageView imgViewMinis3;
-    ImageView imgViewMinis4;
+    //DE QUANTO EM QAUNTO TEMPO EXECUTARÁ O CODIGO
+    private int taxaAtualizacaoEmSegundos = 15;
 
-    TextView txtMinis1;
-    TextView txtMinis2;
-    TextView txtMinis3;
-    TextView txtMinis4;
+    private boolean carregouPersonagens = false;
+    private boolean carregouFavoritos = false;
+    private boolean carregouSetores = false;
 
-    Jogador jogador;
+    private String statusDaRodada = "S";
+
+    List<String> favoritos;
+    List<Setor> tabuleiro;
+    List<String> personagens;
+
+    Jogador jogador, jogadorDaVez;
     Jogo partida;
     Retrofit retrofit;
     APIPartida api;
 
-    //LISTAS DE IMAGEVIEWS E TEXTVIEWS
+    List<Button> buttons;
     List<List<ImageView>> imageViews;
     List<List<TextView>> textViews;
     //endregion
@@ -57,8 +73,36 @@ public class Principal extends Activity {
         setContentView(R.layout.activity_principal);
 
         //region declaration list
+        buttons = new ArrayList<>();
         imageViews = new ArrayList<List<ImageView>>();
         textViews = new ArrayList<List<TextView>>();
+
+        Button btn = findViewById(R.id.btnCandidato1);
+        buttons.add(btn);
+        btn = findViewById(R.id.btnCandidato2);
+        buttons.add(btn);
+        btn = findViewById(R.id.btnCandidato3);
+        buttons.add(btn);
+        btn = findViewById(R.id.btnCandidato4);
+        buttons.add(btn);
+        btn = findViewById(R.id.btnCandidato5);
+        buttons.add(btn);
+        btn = findViewById(R.id.btnCandidato6);
+        buttons.add(btn);
+        btn = findViewById(R.id.btnCandidato7);
+        buttons.add(btn);
+        btn = findViewById(R.id.btnCandidato8);
+        buttons.add(btn);
+        btn = findViewById(R.id.btnCandidato9);
+        buttons.add(btn);
+        btn = findViewById(R.id.btnCandidato10);
+        buttons.add(btn);
+        btn = findViewById(R.id.btnCandidato11);
+        buttons.add(btn);
+        btn = findViewById(R.id.btnCandidato12);
+        buttons.add(btn);
+        btn = findViewById(R.id.btnCandidato13);
+        buttons.add(btn);
 
         for(int x =0; x <7; x++)
         {
@@ -189,70 +233,236 @@ public class Principal extends Activity {
 
         //endregion
 
+        Runnable r = new Runnable() {
+
+            public void run() {
+
+                SharedPreferences pref = getApplicationContext().getSharedPreferences("jogo", 0); // 0 - for private mode
+
+                String idJogador = pref.getString("idJogador","");
+                String nomeJogador = pref.getString("nomeJogador","");
+                String senhaJogador = pref.getString("senhaJogador","");
+                String idJogo = pref.getString("idJogo","");
+                String nomeJogo = pref.getString("nomeJogo","");
+                String senhaJogo = pref.getString("senhaJogo","");
+
+                //Para fins de teste
+                idJogador = "254";
+                senhaJogador = "5235B";
+
+                idJogo = "144";
+                senhaJogo = "123456";
+
+                jogador = new Jogador();
+                jogador.setId(Long.valueOf(idJogador));
+                jogador.setNome(nomeJogador);
+                jogador.setSenha(senhaJogador);
+
+                partida = new Jogo();
+                partida.setId(Long.valueOf(idJogo));
+                partida.setNome(nomeJogo);
+                partida.setSenha(senhaJogo);
 
 
-        SharedPreferences pref = getApplicationContext().getSharedPreferences("jogo", 0); // 0 - for private mode
+                retrofit = new Retrofit.Builder()
+                        .baseUrl("https://mepresidenta.azurewebsites.net/")
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .build();
 
-        String idJogador = pref.getString("idJogador","");
-        String nomeJogador = pref.getString("nomeJogador","");
-        String senhaJogador = pref.getString("senhaJogador","");
-        String idJogo = pref.getString("idJogo","");
-        String nomeJogo = pref.getString("nomeJogo","");
-        String senhaJogo = pref.getString("senhaJogo","");
+                api = retrofit.create(APIPartida.class);
 
-        //Para fins de teste
-        idJogador = "254";
-        senhaJogador = "5235B";
+                getStatusPartida();
+                getPersonagens();
+                getFavorites();
+                getSetores();
 
-        idJogo = "144";
-        senhaJogo = "123456";
 
-        jogador = new Jogador();
-        jogador.setId(Long.valueOf(idJogador));
-        jogador.setNome(nomeJogador);
-        jogador.setSenha(senhaJogador);
+                startRefresher(10);
+            }
+        };
 
-        partida = new Jogo();
-        partida.setId(Long.valueOf(idJogo));
-        partida.setNome(nomeJogo);
-        partida.setSenha(senhaJogo);
+        //inicializa os atualizadores
+        refresher = new Handler();
+        refresherRunner = new Runnable() {
+            @Override
+            public void run() {
+                final Runnable rThis = this;
 
-        
-        retrofit = new Retrofit.Builder()
-                .baseUrl("https://mepresidenta.azurewebsites.net/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+                if(!carregouFavoritos) {
+                    getFavorites();
+                }
 
-        api = retrofit.create(APIPartida.class);
+                if(!carregouPersonagens) {
+                    getPersonagens();
+                }
 
-        getFavorites();
-        getTabuleiro();
-        getProximoJogador();
+                if(!carregouSetores) {
+                    getSetores();
+                }
+
+                getStatusPartida();
+
+                //agenda a chamada da proxima atualização
+                refresher.postDelayed(rThis,taxaAtualizacaoEmSegundos * 1000);
+            }
+        };
+
+        new Thread(r).start();
 
     }
 
+    //VEZ E ESTADOS
 
-    void posicionarPersonagem(Long setor, String personagem) {
+    void iniciarAVez() {
 
-        Call<List<Setor>> call = api.posicionarPersonagem(setor, personagem, jogador);
+        turnoDoJogador = true;
 
-        Callback<List<Setor>> callback =
-                new Callback<List<Setor>>() {
-                    @Override
-                    public void onResponse(Call<List<Setor>> call,
-                                           Response<List<Setor>> response) {
+        //POSICIONAR
+        if(statusDaRodada == "S") {
 
-                        List<Setor> res = response.body();
+        }
 
-                        if(response.isSuccessful()) {
+        //PROMOVER
+        else if(statusDaRodada == "J") {
 
+        }
+
+        //VOTAR
+        else if(statusDaRodada == "V") {
+            mostrarPopUpDeVotacao();
+        }
+
+        stopRefresher();
+    }
+
+    void terminarAVez() {
+
+        turnoDoJogador = false;
+
+        //POSICIONAR
+        if(statusDaRodada == "S") {
+
+        }
+
+        //PROMOVER
+        else if(statusDaRodada == "J") {
+
+        }
+
+        //VOTAR
+        else if(statusDaRodada == "V") {
+            mostrarPopUpDeVotacao();
+        }
+
+        startRefresher(0);
+    }
+
+    void atualizarEstadoDaPartida(Jogo partida) {
+
+        //FIM DA PARTIDA
+        if(partida.getStatus() == "E") {
+            //TODO: MOSTRAR O PLACAR E DEPOIS VOLTAR A TELA INICIAL
+        }
+
+        //POSICIONAR
+        else if(statusDaRodada == "S") {
+
+        }
+
+        //PROMOVER
+        else if(statusDaRodada == "J") {
+            HorizontalScrollView scroll = findViewById(R.id.horizontalScrollView);
+            scroll.setVisibility(View.INVISIBLE);
+        }
+
+        //VOTAR
+        else if(statusDaRodada == "V") {
+            if(turnoDoJogador) mostrarPopUpDeVotacao();
+        }
+
+    }
+
+    @TargetApi(Build.VERSION_CODES.N)
+    void atualizarTabuleiroGrafico(List<Setor> setores) {
+
+        for(Setor novoSetor : setores) {
+
+            for(Setor setorTabuleiro : tabuleiro) {
+
+                if(setorTabuleiro.getId().equals(novoSetor.getId())) {
+
+                    if (!listEqualsIgnoreOrder(novoSetor.getPersonagens(), setorTabuleiro.getPersonagens())) {
+
+                        Integer x = Math.toIntExact(novoSetor.getId());
+
+                        if(x > 5) x = 6;
+
+                        List<String> personagens = novoSetor.getPersonagens();
+
+                        for(int y = 0; y < 4; y++) {
+
+                            if(y+1 > personagens.size()) {
+
+                                textViews.get(x).get(y).setVisibility(View.INVISIBLE);
+                                imageViews.get(x).get(y).setVisibility(View.INVISIBLE);
+                            }
+
+                            else {
+
+                                String nome = personagens.get(y);
+
+                                textViews.get(x).get(y).setText(nome);
+                                textViews.get(x).get(y).setVisibility(View.VISIBLE);
+                                imageViews.get(x).get(y).setVisibility(View.VISIBLE);
+
+                                if(favoritos.contains(personagens.get(y).substring(0,1)))
+                                    imageViews.get(x).get(y).setImageResource(R.mipmap.charicon_fav);
+
+                                else
+                                    imageViews.get(x).get(y).setImageResource(R.mipmap.charicon);
+                            }
 
                         }
 
                     }
 
+                }
+
+            }
+
+        }
+
+    }
+
+
+    //CHECANDO STATUS
+
+    void getStatusPartida() {
+
+        Call<Jogo> call = api.getPartidaStatus(jogador.getId());
+
+        Callback<Jogo> callback =
+                new Callback<Jogo>() {
                     @Override
-                    public void onFailure(Call<List<Setor>> call,
+                    public void onResponse(Call<Jogo> call,
+                                           Response<Jogo> response) {
+
+                        Jogo res = response.body();
+
+                        if(response.isSuccessful()) {
+
+                            if(statusDaRodada != res.getStatusRodado()) {
+                                statusDaRodada = res.getStatusRodado();
+                                atualizarEstadoDaPartida(res);
+                            }
+
+                            getProximoJogador();
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<Jogo> call,
                                           Throwable t) {
 
                         //showDialog("Falha ao carregar as informações", "ERRO 666");
@@ -261,36 +471,6 @@ public class Principal extends Activity {
 
         call.enqueue(callback);
 
-    }
-
-    void promoverPersonagem() {
-
-        Call<List<Setor>> call = api.promoverPersonagem("A",jogador);
-
-        Callback<List<Setor>> callback =
-                new Callback<List<Setor>>() {
-                    @Override
-                    public void onResponse(Call<List<Setor>> call,
-                                           Response<List<Setor>> response) {
-
-                        List<Setor> res = response.body();
-
-                        if(response.isSuccessful()) {
-
-
-                        }
-
-                    }
-
-                    @Override
-                    public void onFailure(Call<List<Setor>> call,
-                                          Throwable t) {
-
-                        //showDialog("Falha ao carregar as informações", "ERRO 666");
-                    }
-                };
-
-        call.enqueue(callback);
     }
 
     @TargetApi(Build.VERSION_CODES.N)
@@ -308,7 +488,17 @@ public class Principal extends Activity {
 
                         if(response.isSuccessful()) {
 
+                            if(jogadorDaVez != null) {
+                                if(jogadorDaVez.getId() != res.getId()) {
+                                    getTabuleiro();
+                                }
+                            }
 
+                            jogadorDaVez = res;
+
+                            if(jogadorDaVez.getId() == jogador.getId()) {
+                                if(!turnoDoJogador) iniciarAVez();
+                            }
                         }
 
                     }
@@ -339,6 +529,7 @@ public class Principal extends Activity {
 
                         if(response.isSuccessful()) {
 
+                            atualizarTabuleiroGrafico(res);
 
                         }
 
@@ -356,6 +547,116 @@ public class Principal extends Activity {
 
     }
 
+    //JOGADAS
+
+    void posicionarPersonagem(final Button btn, Long setor, String personagem) {
+
+        Call<List<Setor>> call = api.posicionarPersonagem(setor, personagem, jogador);
+
+        Callback<List<Setor>> callback =
+                new Callback<List<Setor>>() {
+                    @Override
+                    public void onResponse(Call<List<Setor>> call,
+                                           Response<List<Setor>> response) {
+
+                        List<Setor> res = response.body();
+
+                        if(response.isSuccessful()) {
+
+                            btn.setAlpha(0.45f);
+                            btn.setOnClickListener(null);
+
+                            atualizarTabuleiroGrafico(res);
+                            terminarAVez();
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<Setor>> call,
+                                          Throwable t) {
+
+                        //showDialog("Falha ao carregar as informações", "ERRO 666");
+                    }
+                };
+
+        call.enqueue(callback);
+
+    }
+
+    void promoverPersonagem(String personagem) {
+
+        Call<List<Setor>> call = api.promoverPersonagem("A",jogador);
+
+        Callback<List<Setor>> callback =
+                new Callback<List<Setor>>() {
+                    @Override
+                    public void onResponse(Call<List<Setor>> call,
+                                           Response<List<Setor>> response) {
+
+                        List<Setor> res = response.body();
+
+                        if(response.isSuccessful()) {
+
+                            atualizarTabuleiroGrafico(res);
+                            terminarAVez();
+
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<Setor>> call,
+                                          Throwable t) {
+
+                        //showDialog("Falha ao carregar as informações", "ERRO 666");
+                    }
+                };
+
+        call.enqueue(callback);
+    }
+
+    void votarEmPersonagem(String voto) {
+
+        Call<List<Setor>> call = api.votarNoPresidente (voto,jogador);
+
+        Callback<List<Setor>> callback =
+                new Callback<List<Setor>>() {
+                    @Override
+                    public void onResponse(Call<List<Setor>> call,
+                                           Response<List<Setor>> response) {
+
+                        List<Setor> res = response.body();
+
+                        if(response.isSuccessful()) {
+
+                            if(res.isEmpty()) {
+                                //TODO: TEMOS UM PRESIDENTE!! O QUE FAZER MESMO??
+                            }
+
+                            else {
+                                atualizarTabuleiroGrafico(res);
+                                terminarAVez();
+                            }
+
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<Setor>> call,
+                                          Throwable t) {
+
+                        //showDialog("Falha ao carregar as informações", "ERRO 666");
+                    }
+                };
+
+        call.enqueue(callback);
+
+    }
+
+    //CARREGAMENTO INICIAL
+
     void getFavorites() {
 
         Call<List<String>> call = api.getFavoritosDoJogador(jogador);
@@ -370,7 +671,7 @@ public class Principal extends Activity {
 
                         if(response.isSuccessful()) {
 
-
+                            favoritos = res;
                         }
 
                     }
@@ -385,5 +686,150 @@ public class Principal extends Activity {
 
         call.enqueue(callback);
 
+    }
+
+    void getPersonagens() {
+
+        Call<List<String>> call = api.getPersonagens();
+
+        Callback<List<String>> callback =
+                new Callback<List<String>>() {
+                    @Override
+                    public void onResponse(Call<List<String>> call,
+                                           Response<List<String>> response) {
+
+                        List<String> res = response.body();
+
+                        if(response.isSuccessful()) {
+
+                            carregouPersonagens = true;
+                            personagens = res;
+
+                            for(int x = 0; x < res.size(); x++) {
+
+                                View.OnClickListener listener = new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+
+                                        Button btn = (Button) v;
+
+                                        mostrarPopUpDeSelecionar(btn);
+
+                                    }
+                                };
+
+                                buttons.get(x).setText(res.get(x));
+                                buttons.get(x).setOnClickListener(listener);
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<String>> call,
+                                          Throwable t) {
+
+                        //showDialog("Falha ao carregar as informações", "ERRO 666");
+                    }
+                };
+
+        call.enqueue(callback);
+
+    }
+
+    void getSetores() {
+
+        Call<List<Setor>> call = api.getSetores();
+
+        Callback<List<Setor>> callback =
+                new Callback<List<Setor>>() {
+                    @Override
+                    public void onResponse(Call<List<Setor>> call,
+                                           Response<List<Setor>> response) {
+
+                        List<Setor> res = response.body();
+
+                        if(response.isSuccessful()) {
+
+                            carregouSetores = true;
+                            tabuleiro = res;
+
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<Setor>> call,
+                                          Throwable t) {
+
+                        //showDialog("Falha ao carregar as informações", "ERRO 666");
+                    }
+                };
+
+        call.enqueue(callback);
+
+    }
+
+    //POPUP
+
+    void mostrarPopUpPromover(String personagem) {
+
+        if(!turnoDoJogador) return;
+        Intent intent = new Intent(Principal.this, PopUpEleger.class);
+        intent.putExtra("nome", personagem);
+
+        startActivity(intent);
+
+        Boolean eleger = intent.getBooleanExtra("eleger", false);
+
+        if(eleger)
+            promoverPersonagem(personagem.substring(0,1));
+
+
+    }
+
+    void mostrarPopUpDeVotacao() {
+
+        if(!turnoDoJogador) return;
+
+        //TODO MOSTRAR POPUP DE VOTACAO
+
+    }
+
+    void mostrarPopUpDeSelecionar(Button btn) {
+
+        if(!turnoDoJogador) return;
+
+        //TODO: FAZER O POPUP RESPONDER AO INTENT E VOLTAR A OPCAO NO MESMO
+        Intent intent = new Intent(Principal.this, PopUpSelecionar.class);
+        intent.putExtra("nome", btn.getText().toString());
+
+        startActivity(intent);
+
+        Long setor = intent.getLongExtra("setor", -1);
+
+        if(setor >= 0)
+            posicionarPersonagem(btn, setor, btn.getText().toString().substring(0, 1));
+
+    }
+
+    //REFRESHER
+
+    //inicializa o atualizador
+    public void startRefresher(long delay) {
+        if (refresher != null)
+            refresher.postDelayed(refresherRunner, delay);
+    }
+
+    //desliga o atualizador
+    public void stopRefresher () {
+        if (refresher != null)
+            refresher.removeCallbacks(refresherRunner);
+    }
+
+
+    //LIST COMPARE
+
+    public static <T> boolean listEqualsIgnoreOrder(List<T> list1, List<T> list2) {
+        return new HashSet<>(list1).equals(new HashSet<>(list2));
     }
 }
