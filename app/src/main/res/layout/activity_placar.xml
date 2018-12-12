@@ -42,6 +42,7 @@
                     android:layout_width="196dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:fontFamily="@font/latolightitalic"
                     android:text="1. Jogador"
                     android:textColor="#2BADB5"
                     android:textSize="36sp"
@@ -55,18 +56,20 @@
                     android:layout_weight="1"
                     android:text="(+0000)"
                     android:textColor="#E84D5B"
-                    android:textSize="8pt" />
+                    android:textSize="8pt"
+                    android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/pontos1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="00000"
+                    android:text="000"
                     android:textColor="#2BADB5"
                     android:textSize="8pt"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -77,6 +80,7 @@
                     android:layout_width="196dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:fontFamily="@font/latolightitalic"
                     android:text="2. Jogador"
                     android:textColor="#2BADB5"
                     android:textSize="36sp"
@@ -90,18 +94,20 @@
                     android:layout_weight="1"
                     android:text="(+0000)"
                     android:textColor="#E84D5B"
-                    android:textSize="8pt" />
+                    android:textSize="8pt"
+                    android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/pontos2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="00000"
+                    android:text="000"
                     android:textColor="#2BADB5"
                     android:textSize="8pt"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -112,6 +118,7 @@
                     android:layout_width="196dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:fontFamily="@font/latolightitalic"
                     android:text="3. Jogador"
                     android:textColor="#2BADB5"
                     android:textSize="36sp"
@@ -139,6 +146,7 @@
                     android:textStyle="bold"
                     android:visibility="invisible" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -149,6 +157,7 @@
                     android:layout_width="196dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:fontFamily="@font/latolightitalic"
                     android:text="4. Jogador"
                     android:textColor="#2BADB5"
                     android:textSize="36sp"
@@ -176,6 +185,7 @@
                     android:textStyle="bold"
                     android:visibility="invisible" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -186,6 +196,7 @@
                     android:layout_width="196dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:fontFamily="@font/latolightitalic"
                     android:text="5. Jogador"
                     android:textColor="#2BADB5"
                     android:textSize="36sp"
@@ -224,6 +235,7 @@
                     android:layout_width="196dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:fontFamily="@font/latolightitalic"
                     android:text="6. Jogador"
                     android:textColor="#2BADB5"
                     android:textSize="36sp"
@@ -253,16 +265,15 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/fimDaRodada"
+                android:id="@+id/txtVoltar"
                 android:layout_width="match_parent"
                 android:layout_height="153dp"
                 android:background="@android:color/white"
                 android:fontFamily="@font/latoblackitalic"
-                android:text="Fim da Rodada"
+                android:text="VOLTAR"
                 android:textAlignment="center"
                 android:textColor="#E84D5B"
-                android:textSize="18pt"
-                />
+                android:textSize="18pt" />
 
         </LinearLayout>
     </ScrollView>

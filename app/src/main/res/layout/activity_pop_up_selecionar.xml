@@ -117,7 +117,7 @@
             android:layout_height="46dp"
             android:layout_marginTop="8dp"
             android:text="Posicionar"
-            android:textSize="24sp"
+            android:textSize="18sp"
             android:typeface="sans"
             android:visibility="visible"
             app:layout_constraintStart_toStartOf="parent"

@@ -10,6 +10,7 @@ import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -48,12 +49,14 @@ public class Principal extends Activity {
 
     //DE QUANTO EM QAUNTO TEMPO EXECUTARÁ O CODIGO
     private int taxaAtualizacaoEmSegundos = 15;
+    private int vetos = 2;
 
     private boolean carregouPersonagens = false;
     private boolean carregouFavoritos = false;
     private boolean carregouSetores = false;
 
     private String statusDaRodada = "S";
+    private String statusDaPartida = "J";
 
     List<String> favoritos;
     List<Setor> tabuleiro;
@@ -241,6 +244,7 @@ public class Principal extends Activity {
 
 
 
+
         Runnable r = new Runnable() {
 
             public void run() {
@@ -296,17 +300,17 @@ public class Principal extends Activity {
             public void run() {
                 final Runnable rThis = this;
 
-                if(!carregouFavoritos) {
-                    getFavorites();
-                }
-
-                if(!carregouPersonagens) {
-                    getPersonagens();
-                }
-
-                if(!carregouSetores) {
-                    getSetores();
-                }
+//                if(!carregouFavoritos) {
+//                    getFavorites();
+//                }
+//
+//                if(!carregouPersonagens) {
+//                    getPersonagens();
+//                }
+//
+//                if(!carregouSetores) {
+//                    getSetores();
+//                }
 
                 getStatusPartida();
                 getTabuleiro();
@@ -322,7 +326,14 @@ public class Principal extends Activity {
         new Thread(r).start();
 
 
+        Button b = findViewById(R.id.placarButton);
 
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mostrarPlacar();
+            }
+        });
 
     }
 
@@ -378,7 +389,8 @@ public class Principal extends Activity {
 
         //FIM DA PARTIDA
         if(partida.getStatus().equals("E")) {
-            //TODO: MOSTRAR O PLACAR E DEPOIS VOLTAR A TELA INICIAL
+
+            mostrarPlacar();
         }
 
         //POSICIONAR
@@ -400,13 +412,8 @@ public class Principal extends Activity {
 
     void acaoDoBotao(Button btn) {
 
-        //FIM DA PARTIDA
-        if(partida.getStatus().equals("E")) {
-
-        }
-
         //POSICIONAR
-        else if(statusDaRodada.equals("S")) {
+        if(statusDaRodada.equals("S")) {
             mostrarPopUpDeSelecionar(btn);
         }
 
@@ -417,7 +424,7 @@ public class Principal extends Activity {
 
         //VOTAR
         else if(statusDaRodada.equals("V")) {
-            //if(turnoDoJogador) mostrarPopUpDeVotacao();
+            if(turnoDoJogador) mostrarPopUpDeVotacao();
         }
 
     }
@@ -425,80 +432,104 @@ public class Principal extends Activity {
     @TargetApi(Build.VERSION_CODES.N)
     void atualizarTabuleiroGrafico(List<Setor> setores) {
 
-        for(Setor novoSetor : setores) {
+        if(tabuleiro == null) {
+            return;
+        }
 
-            for(Setor setorTabuleiro : tabuleiro) {
+        for (Setor setorTabuleiro : tabuleiro) {
 
-                if(setorTabuleiro.getId().equals(novoSetor.getId())) {
+            Boolean temSetor = false;
 
-                    if (!listEqualsIgnoreOrder(novoSetor.getPersonagens(), setorTabuleiro.getPersonagens())) {
+            for (Setor setorNovo : setores) {
 
-                        Integer x = Math.toIntExact(novoSetor.getId());
+                if (setorTabuleiro.getId().equals(setorNovo.getId())) {
 
-                        if(x > 5) {
+                    temSetor = true;
 
-                            if(!novoSetor.getPersonagens().isEmpty()) {
+                    Integer x = Math.toIntExact(setorNovo.getId());
 
-                                String first = novoSetor.getPersonagens().get(0);
+                    if (x > 5) {
 
-                                for (String personagem : personagens) {
+                        String first = setorNovo.getPersonagens().get(0);
 
-                                    if (personagem.substring(0, 1).equals(first)) {
-                                        txtPresidente.setText(first);
+                        for (String personagem : personagens) {
+
+                            if (personagem.substring(0, 1).equals(first)) {
+
+                                txtPresidente.setVisibility(View.VISIBLE);
+                                txtPresidente.setTextColor(Color.parseColor("#F5ECD9"));
+                                txtPresidente.setText(personagem);
+
+                                break;
+                            }
+
+
+                        }
+                    }
+
+                    else {
+
+                        List<String> personagensNoSetor = setorNovo.getPersonagens();
+
+                        for (int y = 0; y < 4; y++) {
+
+                            if (y + 1 > personagensNoSetor.size()) {
+
+                                textViews.get(x).get(y).setVisibility(View.INVISIBLE);
+                                imageViews.get(x).get(y).setVisibility(View.INVISIBLE);
+
+                            } else {
+
+                                String primeira = personagensNoSetor.get(y);
+
+                                for (String nome : personagens) {
+
+                                    if (nome.substring(0, 1).equals(primeira)) {
+                                        textViews.get(x).get(y).setText(nome.toUpperCase());
+                                        textViews.get(x).get(y).setVisibility(View.VISIBLE);
 
                                         break;
                                     }
                                 }
 
+                                imageViews.get(x).get(y).setVisibility(View.VISIBLE);
+
+                                if (favoritos.contains(primeira))
+                                    imageViews.get(x).get(y).setImageResource(R.mipmap.charicon_fav);
+
+                                else
+                                    imageViews.get(x).get(y).setImageResource(R.mipmap.charicon);
                             }
+
                         }
-
-                        else {
-
-                            List<String> personagensNoSetor = novoSetor.getPersonagens();
-
-                            for (int y = 0; y < 4; y++) {
-
-                                if (y + 1 > personagensNoSetor.size()) {
-
-                                    textViews.get(x).get(y).setVisibility(View.INVISIBLE);
-                                    imageViews.get(x).get(y).setVisibility(View.INVISIBLE);
-                                } else {
-
-                                    String primeira = personagensNoSetor.get(y);
-
-                                    for (String nome : personagens) {
-
-                                        if (nome.substring(0, 1).equals(primeira)) {
-                                            textViews.get(x).get(y).setText(nome.toUpperCase());
-                                            textViews.get(x).get(y).setVisibility(View.VISIBLE);
-
-                                            break;
-                                        }
-                                    }
-
-                                    imageViews.get(x).get(y).setVisibility(View.VISIBLE);
-
-                                    if (favoritos.contains(personagens.get(y).substring(0, 1)))
-                                        imageViews.get(x).get(y).setImageResource(R.mipmap.charicon_fav);
-
-                                    else
-                                        imageViews.get(x).get(y).setImageResource(R.mipmap.charicon);
-                                }
-
-                            }
-                        }
-
                     }
+
+                    break;
 
                 }
 
             }
 
+            if (!temSetor) {
+                Integer x = Math.toIntExact(setorTabuleiro.getId());
+
+                if(x <= 5) {
+
+                    for (int y = 0; y < 4; y++) {
+
+                        textViews.get(x).get(y).setVisibility(View.INVISIBLE);
+                        imageViews.get(x).get(y).setVisibility(View.INVISIBLE);
+
+                    }
+                }
+
+                else {
+                    txtPresidente.setText("");
+                }
+            }
+
         }
-
     }
-
 
     //CHECANDO STATUS
 
@@ -518,6 +549,12 @@ public class Principal extends Activity {
 
                             if(!statusDaRodada.equals(res.getStatusRodado())) {
                                 statusDaRodada = res.getStatusRodado();
+                                statusDaPartida = res.getStatus();
+
+                                if(statusDaPartida.equals("E")) {
+                                    mostrarPlacar();
+                                }
+
                                 atualizarEstadoDaPartida(res);
                             }
 
@@ -530,7 +567,7 @@ public class Principal extends Activity {
                     public void onFailure(Call<Jogo> call,
                                           Throwable t) {
 
-                        //showDialog("Falha ao carregar as informações", "ERRO 666");
+                        getStatusPartida();
                     }
                 };
 
@@ -572,7 +609,7 @@ public class Principal extends Activity {
                     public void onFailure(Call<Jogador> call,
                                           Throwable t) {
 
-                        //showDialog("Falha ao carregar as informações", "ERRO 666");
+                        getProximoJogador();
                     }
                 };
 
@@ -597,7 +634,7 @@ public class Principal extends Activity {
 
             Button btn = buttons.get(x);
 
-            String candidato = btn.getText().toString().substring(0,1);
+            String candidato = personagens.get(x).substring(0,1);
 
             if(favoritos.contains(candidato)) {
                 btn.setBackgroundResource(R.drawable.pop_selecionar);
@@ -635,7 +672,7 @@ public class Principal extends Activity {
                     public void onFailure(Call<List<Setor>> call,
                                           Throwable t) {
 
-                        //showDialog("Falha ao carregar as informações", "ERRO 666");
+                        getTabuleiro();
                     }
                 };
 
@@ -669,7 +706,8 @@ public class Principal extends Activity {
                     public void onFailure(Call<List<Setor>> call,
                                           Throwable t) {
 
-                        //showDialog("Falha ao carregar as informações", "ERRO 666");
+                        Log.w("Call Failed", "Falha ao posicionar o personagem.");
+
                     }
                 };
 
@@ -679,7 +717,7 @@ public class Principal extends Activity {
 
     void promoverPersonagem(String personagem) {
 
-        Call<List<Setor>> call = api.promoverPersonagem("A",jogador);
+        Call<List<Setor>> call = api.promoverPersonagem(personagem,jogador);
 
         Callback<List<Setor>> callback =
                 new Callback<List<Setor>>() {
@@ -702,7 +740,7 @@ public class Principal extends Activity {
                     public void onFailure(Call<List<Setor>> call,
                                           Throwable t) {
 
-                        //showDialog("Falha ao carregar as informações", "ERRO 666");
+                        Log.w("Call Failed", "Falha ao promover o personagem.");
                     }
                 };
 
@@ -711,7 +749,7 @@ public class Principal extends Activity {
 
     void votarEmPersonagem(String voto) {
 
-        Call<List<Setor>> call = api.votarNoPresidente (voto,jogador);
+        Call<List<Setor>> call = api.votarNoPresidente(voto,jogador);
 
         Callback<List<Setor>> callback =
                 new Callback<List<Setor>>() {
@@ -724,7 +762,7 @@ public class Principal extends Activity {
                         if(response.isSuccessful()) {
 
                             if(res.isEmpty()) {
-                                //TODO: TEMOS UM PRESIDENTE!! O QUE FAZER MESMO??
+                                mostrarPlacar();
                             }
 
                             else {
@@ -740,7 +778,8 @@ public class Principal extends Activity {
                     public void onFailure(Call<List<Setor>> call,
                                           Throwable t) {
 
-                        //showDialog("Falha ao carregar as informações", "ERRO 666");
+                        Log.w("Call Failed", "Falha ao votar no personagem.");
+                        mostrarPopUpDeVotacao();
                     }
                 };
 
@@ -778,7 +817,8 @@ public class Principal extends Activity {
                     public void onFailure(Call<List<String>> call,
                                           Throwable t) {
 
-                        //showDialog("Falha ao carregar as informações", "ERRO 666");
+                        getFavorites();
+                        Log.w("Call Failed", "Falha ao carregar os favoritos.");
                     }
                 };
 
@@ -814,7 +854,8 @@ public class Principal extends Activity {
                     public void onFailure(Call<List<String>> call,
                                           Throwable t) {
 
-                        //showDialog("Falha ao carregar as informações", "ERRO 666");
+                        getPersonagens();
+                        Log.w("Call Failed", "Falha ao carregar os personagens.");
                     }
                 };
 
@@ -847,7 +888,8 @@ public class Principal extends Activity {
                     public void onFailure(Call<List<Setor>> call,
                                           Throwable t) {
 
-                        //showDialog("Falha ao carregar as informações", "ERRO 666");
+                        getSetores();
+                        Log.w("Call Failed", "Falha ao carregar os setores.");
                     }
                 };
 
@@ -856,6 +898,21 @@ public class Principal extends Activity {
     }
 
     //POPUP
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        stopRefresher();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        startRefresher(0);
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -867,15 +924,27 @@ public class Principal extends Activity {
 
         if(requestCode == 1) {
 
-            Boolean eleger = data.getBooleanExtra("eleger", false);
+            Integer eleger = data.getIntExtra("eleger", 0);
 
-            if(eleger) {
-                String personagem = data.getStringExtra("nome");
-                promoverPersonagem(personagem.substring(0, 1));
+            if(eleger == 0 && vetos > 0) {
+                vetos--;
+                votarEmPersonagem("N");
+            }
+
+            else  {
+                votarEmPersonagem("S");
             }
         }
 
         else if(requestCode == 2) {
+
+            Integer voto = data.getIntExtra("voto",0);
+
+            if(voto.equals(1)) {
+
+                String personagem = data.getStringExtra("nome").substring(0,1);
+                promoverPersonagem(personagem);
+            }
 
         }
 
@@ -888,21 +957,39 @@ public class Principal extends Activity {
             if(setor >= 0)
                 posicionarPersonagem(btn, setor, btn.getText().toString().substring(0, 1));
         }
+
+        else if(requestCode == 4) {
+            startRefresher(0);
+        }
     }
+
+    void mostrarPlacar() {
+
+        Intent i = new Intent(Principal.this, Placar.class);
+        i.putExtra("jogadorId", partida.getId());
+
+        startActivityForResult(i, 4);
+    }
+
 
     void mostrarPopUpPromover(String personagem) {
 
         if(!turnoDoJogador) return;
-        Intent intent = new Intent(Principal.this, PopUpEleger.class);
+        Intent intent = new Intent(Principal.this, PopUpVotar.class);
         intent.putExtra("nome", personagem);
 
-        startActivityForResult(intent, 1);
+        startActivityForResult(intent, 2);
 
     }
 
     void mostrarPopUpDeVotacao() {
 
         if(!turnoDoJogador) return;
+        Intent intent = new Intent(Principal.this, PopUpEleger.class);
+        intent.putExtra("nome", txtPresidente.getText().toString());
+        intent.putExtra("vetos", vetos);
+
+        startActivityForResult(intent, 1);
 
     }
 
@@ -936,6 +1023,8 @@ public class Principal extends Activity {
     //LIST COMPARE
 
     public static <T> boolean listEqualsIgnoreOrder(List<T> list1, List<T> list2) {
+        if(list1.isEmpty() && !list2.isEmpty()) return false;
+        if(!list1.isEmpty() && list2.isEmpty()) return false;
         return new HashSet<>(list1).equals(new HashSet<>(list2));
     }
 }

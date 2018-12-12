@@ -19,6 +19,7 @@ public class PopUpVotar extends Activity {
     Button btnYes;
     TextView txtCandidato1;
     TextView txtCandidato2;
+    String nome;
     //endregion
 
     @Override
@@ -41,13 +42,22 @@ public class PopUpVotar extends Activity {
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // Aqui tira os esqueminhas de borda
         getWindow().setAttributes(params);
 
+        Intent i = getIntent();
+
+        nome = i.getStringExtra("nome");
+
+        txtCandidato1.setText(nome);
+        txtCandidato2.setText(nome);
+
         //region buttons
         btnYes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent retorno = getIntent();
+                Intent retorno = new Intent();// getIntent();
                 retorno.putExtra("voto", 1);//1 para sim
+                retorno.putExtra("nome", nome);
                 setResult(RESULT_OK, retorno);
+                finish();
             }
         });
         btnClose.setOnClickListener(new View.OnClickListener() {

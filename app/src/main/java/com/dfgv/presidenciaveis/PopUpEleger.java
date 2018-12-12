@@ -31,8 +31,8 @@ public class PopUpEleger extends Activity {
         //region declarações
         btnEleger = findViewById(R.id.btnSimEleger);
         btnVetar = findViewById(R.id.btnVetar);
-        txtCandidato1 = findViewById(R.id.txtCandidatoSelecionar1);
-        txtCandidato2 = findViewById(R.id.txtCandidatoSelecionar2);
+        txtCandidato1 = findViewById(R.id.txtCandidatoEleger);
+        txtCandidato2 = findViewById(R.id.txtCandidatoEleger2);
         //endregion
 
         WindowManager.LayoutParams params = getWindow().getAttributes();
@@ -44,29 +44,40 @@ public class PopUpEleger extends Activity {
         Intent i = getIntent();
 
         String nomeCandidato = i.getStringExtra("nome");
+        Integer vetos = i.getIntExtra("vetos", 0);
 
         txtCandidato1.setText(nomeCandidato);
         txtCandidato2.setText(nomeCandidato);
+
+        String text = "VETAR " + "(" + vetos.toString() + ")";
+        btnVetar.setText(text);
+
 
         //region buttons
         btnEleger.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v){
-                Intent retorno = getIntent();
+                Intent retorno = new Intent();
                 retorno.putExtra("eleger", 1);//1 para sim
                 setResult(RESULT_OK, retorno);
+                finish();
             }
         });
-        btnVetar.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v){
-                Intent retorno = getIntent();
-                retorno.putExtra("eleger", 0);//0 para não | veto
-                setResult(RESULT_OK, retorno);
-            }
-        });
+
+        if(vetos > 0) {
+
+            btnVetar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent retorno = getIntent();
+                    retorno.putExtra("eleger", 0);//0 para não | veto
+                    setResult(RESULT_OK, retorno);
+                    finish();
+                }
+            });
+
+        }
         //endregion
     }
 }

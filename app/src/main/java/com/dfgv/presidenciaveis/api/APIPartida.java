@@ -20,7 +20,7 @@ public interface APIPartida {
     Call<List<Jogo>> getPartidas();
 
     @GET("/kingme/rest/v1/jogador/{id}")
-    Call<List<Jogador>> getJogadoresNaPartida(@Path("id") Integer id);
+    Call<List<Jogador>> getJogadoresNaPartida(@Path("id") Long id);
 
     @PUT("/kingme/rest/v1/jogo/")
     Call<Jogador> iniciarPartidaERetornarJogador(@Body Jogo jogo);
