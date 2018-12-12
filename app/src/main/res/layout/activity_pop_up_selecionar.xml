@@ -86,16 +86,16 @@
             android:layout_marginBottom="12dp"
             android:background="@drawable/pop_selecionar"
             android:fontFamily="@font/latoblackitalic"
-            android:text="VEREADOR"
+            android:text="SENADOR"
             android:textColor="#F5ECD9"
             app:layout_constraintBottom_toTopOf="@+id/btnGovernador"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtCandidatoSelecionar"
+            app:layout_constraintTop_toBottomOf="@+id/txtCandidatoSelecionar2"
             app:layout_constraintVertical_bias="1.0" />
 
         <TextView
-            android:id="@+id/txtCandidatoSelecionar"
+            android:id="@+id/txtCandidatoSelecionar2"
             android:layout_width="205dp"
             android:layout_height="47dp"
             android:layout_marginEnd="8dp"
@@ -109,7 +109,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtCandidatoSelecionar2" />
+            app:layout_constraintTop_toBottomOf="@+id/txtCandidatoSelecionar1" />
 
         <TextView
             android:id="@+id/txtSelecionar"
@@ -121,10 +121,10 @@
             android:typeface="sans"
             android:visibility="visible"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtCandidatoSelecionar2" />
+            app:layout_constraintTop_toBottomOf="@+id/txtCandidatoSelecionar1" />
 
         <TextView
-            android:id="@+id/txtCandidatoSelecionar2"
+            android:id="@+id/txtCandidatoSelecionar1"
             android:layout_width="172dp"
             android:layout_height="48dp"
             android:layout_marginEnd="8dp"
