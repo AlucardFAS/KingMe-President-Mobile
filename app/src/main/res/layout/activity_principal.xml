@@ -22,12 +22,11 @@
 
         <LinearLayout
             android:layout_width="341dp"
-            android:layout_height="299dp"
+            android:layout_height="298dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:background="@drawable/pop_tabuleiro"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -38,12 +37,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:backgroundTint="@color/design_default_color_primary_dark"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_tabuleiro"
                     android:orientation="vertical">
 
                     <ImageView
@@ -51,8 +52,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:scaleX="0.7"
-                        android:scaleY="0.7"
+                        android:scaleX="1"
+                        android:scaleY="1"
                         android:src="@mipmap/charicon"
                         android:visibility="invisible" />
 
@@ -63,13 +64,14 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/latoblackitalic"
                         android:textAlignment="center"
-                        android:visibility="invisible" />
+                        android:visibility="visible" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_tabuleiro"
                     android:orientation="vertical">
 
                     <ImageView
@@ -96,6 +98,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_tabuleiro"
                     android:orientation="vertical">
 
                     <ImageView
@@ -122,12 +125,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_tabuleiro"
                     android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/imgMinis4"
-                        android:layout_width="match_parent"
-                        android:layout_height="26dp"
+                        android:layout_width="65dp"
+                        android:layout_height="15dp"
                         android:scaleX="0.7"
                         android:scaleY="0.7"
                         android:src="@mipmap/charicon"
@@ -135,8 +139,8 @@
 
                     <TextView
                         android:id="@+id/txtMinis4"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_width="64dp"
+                        android:layout_height="wrap_content"
                         android:fontFamily="@font/latoblackitalic"
                         android:textAlignment="center"
                         android:visibility="invisible" />
@@ -153,6 +157,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_tabuleiro"
                     android:orientation="vertical">
 
                     <ImageView
@@ -179,6 +184,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_tabuleiro"
                     android:orientation="vertical">
 
                     <ImageView
@@ -205,6 +211,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_tabuleiro"
                     android:orientation="vertical">
 
                     <ImageView
@@ -231,6 +238,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_tabuleiro"
                     android:orientation="vertical">
 
                     <ImageView
@@ -264,6 +272,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_tabuleiro"
                     android:orientation="vertical">
 
                     <ImageView
@@ -290,6 +299,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_tabuleiro"
                     android:orientation="vertical">
 
                     <ImageView
@@ -316,6 +326,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_tabuleiro"
                     android:orientation="vertical">
 
                     <ImageView
@@ -342,6 +353,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_tabuleiro"
                     android:orientation="vertical">
 
                     <ImageView
@@ -375,6 +387,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_tabuleiro"
                     android:orientation="vertical">
 
                     <ImageView
@@ -401,6 +414,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_tabuleiro"
                     android:orientation="vertical">
 
                     <ImageView
@@ -427,6 +441,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_tabuleiro"
                     android:orientation="vertical">
 
                     <ImageView
@@ -453,6 +468,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_tabuleiro"
                     android:orientation="vertical">
 
                     <ImageView
@@ -484,6 +500,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_tabuleiro"
                     android:orientation="vertical">
 
                     <ImageView
@@ -510,6 +527,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_tabuleiro"
                     android:orientation="vertical">
 
                     <ImageView
@@ -536,6 +554,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_tabuleiro"
                     android:orientation="vertical">
 
                     <ImageView
@@ -562,6 +581,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_tabuleiro"
                     android:orientation="vertical">
 
                     <ImageView
@@ -593,6 +613,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_tabuleiro"
                     android:orientation="vertical">
 
                     <ImageView
@@ -619,6 +640,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_tabuleiro"
                     android:orientation="vertical">
 
                     <ImageView
@@ -645,6 +667,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_tabuleiro"
                     android:orientation="vertical">
 
                     <ImageView
@@ -671,6 +694,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/pop_tabuleiro"
                     android:orientation="vertical">
 
                     <ImageView
