@@ -255,11 +255,11 @@ public class Principal extends Activity {
                 String senhaJogo = pref.getString("senhaJogo","");
 
                 //Para fins de teste
-                idJogador = "351";
-                senhaJogador = "B343C";
-
-                idJogo = "197";
-                senhaJogo = "123456";
+//                idJogador = "351";
+//                senhaJogador = "B343C";
+//
+//                idJogo = "197";
+//                senhaJogo = "123456";
 
                 jogador = new Jogador();
                 jogador.setId(Long.valueOf(idJogador));
@@ -357,18 +357,18 @@ public class Principal extends Activity {
         turnoDoJogador = false;
 
         //POSICIONAR
-        if(statusDaRodada == "S") {
+        if(statusDaRodada.equals("S")) {
 
         }
 
         //PROMOVER
-        else if(statusDaRodada == "J") {
+        else if(statusDaRodada.equals("J")) {
 
         }
 
         //VOTAR
-        else if(statusDaRodada == "V") {
-            mostrarPopUpDeVotacao();
+        else if(statusDaRodada.equals("V")) {
+            //mostrarPopUpDeVotacao();
         }
 
         startRefresher(0);
@@ -377,24 +377,47 @@ public class Principal extends Activity {
     void atualizarEstadoDaPartida(Jogo partida) {
 
         //FIM DA PARTIDA
-        if(partida.getStatus() == "E") {
+        if(partida.getStatus().equals("E")) {
             //TODO: MOSTRAR O PLACAR E DEPOIS VOLTAR A TELA INICIAL
         }
 
         //POSICIONAR
-        else if(statusDaRodada == "S") {
+        else if(statusDaRodada.equals("S")) {
 
         }
 
         //PROMOVER
-        else if(statusDaRodada == "J") {
-            HorizontalScrollView scroll = findViewById(R.id.horizontalScrollView);
-            scroll.setVisibility(View.INVISIBLE);
+        else if(statusDaRodada.equals("J")) {
+
         }
 
         //VOTAR
-        else if(statusDaRodada == "V") {
+        else if(statusDaRodada.equals("V")) {
             if(turnoDoJogador) mostrarPopUpDeVotacao();
+        }
+
+    }
+
+    void acaoDoBotao(Button btn) {
+
+        //FIM DA PARTIDA
+        if(partida.getStatus().equals("E")) {
+
+        }
+
+        //POSICIONAR
+        else if(statusDaRodada.equals("S")) {
+            mostrarPopUpDeSelecionar(btn);
+        }
+
+        //PROMOVER
+        else if(statusDaRodada.equals("J")) {
+            mostrarPopUpPromover(btn.getText().toString());
+        }
+
+        //VOTAR
+        else if(statusDaRodada.equals("V")) {
+            //if(turnoDoJogador) mostrarPopUpDeVotacao();
         }
 
     }
@@ -542,7 +565,20 @@ public class Principal extends Activity {
 
     void ajustarFavoritos() {
 
-        for(Button btn : buttons) {
+
+        for(int x = 0; x < personagens.size(); x++) {
+
+            View.OnClickListener listener = new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Button btn = (Button) v;
+                    acaoDoBotao(btn);
+
+                }
+            };
+
+            Button btn = buttons.get(x);
 
             String candidato = btn.getText().toString().substring(0,1);
 
@@ -551,6 +587,9 @@ public class Principal extends Activity {
                 btn.setTextColor(Color.parseColor("#F5ECD9"));
 
             }
+
+            btn.setText(personagens.get(x));
+            btn.setOnClickListener(listener);
         }
 
     }
@@ -602,9 +641,6 @@ public class Principal extends Activity {
                         List<Setor> res = response.body();
 
                         if(response.isSuccessful()) {
-
-                            btn.setAlpha(0.45f);
-                            btn.setOnClickListener(null);
 
                             atualizarTabuleiroGrafico(res);
                             terminarAVez();
@@ -754,22 +790,6 @@ public class Principal extends Activity {
                                 ajustarFavoritos();
                             }
 
-                            for(int x = 0; x < res.size(); x++) {
-
-                                View.OnClickListener listener = new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-
-                                        Button btn = (Button) v;
-
-                                        mostrarPopUpDeSelecionar(btn);
-
-                                    }
-                                };
-
-                                buttons.get(x).setText(res.get(x));
-                                buttons.get(x).setOnClickListener(listener);
-                            }
                         }
                     }
 
@@ -820,10 +840,13 @@ public class Principal extends Activity {
 
     //POPUP
 
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
+        if(data == null) {
+            return;
+        }
 
         if(requestCode == 1) {
 
