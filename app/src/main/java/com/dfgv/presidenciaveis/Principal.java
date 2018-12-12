@@ -338,7 +338,7 @@ public class Principal extends Activity {
             }
         });
 
-        mediaPlayer = MediaPlayer.create(Principal.this, R.raw.burro);
+        mediaPlayer = MediaPlayer.create(Principal.this, R.raw.votosom);
         mediaPlayer.start();
 
     }
@@ -966,7 +966,7 @@ public class Principal extends Activity {
 
             if(setor >= 0)
                 posicionarPersonagem(btn, setor, btn.getText().toString().substring(0, 1));
-            
+
             mediaPlayer.start();
         }
 
