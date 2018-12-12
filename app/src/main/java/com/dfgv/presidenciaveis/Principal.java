@@ -247,7 +247,7 @@ public class Principal extends Activity {
                 String senhaJogo = pref.getString("senhaJogo","");
 
                 //Para fins de teste
-                idJogador = "254";
+                idJogador = "255";
                 senhaJogador = "5235B";
 
                 idJogo = "144";
@@ -318,17 +318,17 @@ public class Principal extends Activity {
         turnoDoJogador = true;
 
         //POSICIONAR
-        if(statusDaRodada == "S") {
+        if(statusDaRodada.equals("S")) {
 
         }
 
         //PROMOVER
-        else if(statusDaRodada == "J") {
+        else if(statusDaRodada.equals("J")) {
 
         }
 
         //VOTAR
-        else if(statusDaRodada == "V") {
+        else if(statusDaRodada.equals("V")) {
             mostrarPopUpDeVotacao();
         }
 
@@ -489,14 +489,14 @@ public class Principal extends Activity {
                         if(response.isSuccessful()) {
 
                             if(jogadorDaVez != null) {
-                                if(jogadorDaVez.getId() != res.getId()) {
+                                if(!jogadorDaVez.getId().equals(res.getId())) {
                                     getTabuleiro();
                                 }
                             }
 
                             jogadorDaVez = res;
 
-                            if(jogadorDaVez.getId() == jogador.getId()) {
+                            if(jogadorDaVez.getId().equals(jogador.getId())) {
                                 if(!turnoDoJogador) iniciarAVez();
                             }
                         }
