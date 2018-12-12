@@ -9,24 +9,25 @@
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout3"
-        android:layout_width="410dp"
-        android:layout_height="309dp"
+        android:layout_width="365dp"
+        android:layout_height="333dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:background="@drawable/pop_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <LinearLayout
-            android:layout_width="335dp"
-            android:layout_height="301dp"
+            android:layout_width="341dp"
+            android:layout_height="299dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:background="#F5ECD9"
+            android:background="@drawable/pop_tabuleiro"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -50,15 +51,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
                         android:src="@mipmap/charicon"
-                        android:visibility="visible" />
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/txtMinis1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:fontFamily="@font/latoblackitalic"
+                        android:textAlignment="center"
+                        android:visibility="invisible" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -72,14 +77,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/charicon" />
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
+                        android:src="@mipmap/charicon"
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/txtMinis2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:fontFamily="@font/latoblackitalic"
+                        android:textAlignment="center"
+                        android:visibility="invisible" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -93,14 +103,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/charicon" />
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
+                        android:src="@mipmap/charicon"
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/txtMinis3"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:fontFamily="@font/latoblackitalic"
+                        android:textAlignment="center"
+                        android:visibility="invisible" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -113,13 +128,18 @@
                         android:id="@+id/imgMinis4"
                         android:layout_width="match_parent"
                         android:layout_height="26dp"
-                        android:src="@mipmap/charicon" />
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
+                        android:src="@mipmap/charicon"
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/txtMinis4"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="TextView" />
+                        android:fontFamily="@font/latoblackitalic"
+                        android:textAlignment="center"
+                        android:visibility="invisible" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -140,15 +160,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
                         android:src="@mipmap/charicon"
-                        android:visibility="visible" />
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/txtSenador1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:fontFamily="@font/latoblackitalic"
+                        android:textAlignment="center"
+                        android:visibility="invisible" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -162,14 +186,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/charicon" />
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
+                        android:src="@mipmap/charicon"
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/txtSenador2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:fontFamily="@font/latoblackitalic"
+                        android:textAlignment="center"
+                        android:visibility="invisible" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -183,14 +212,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/charicon" />
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
+                        android:src="@mipmap/charicon"
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/txtSenador3"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:fontFamily="@font/latoblackitalic"
+                        android:textAlignment="center"
+                        android:visibility="invisible" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -203,13 +237,20 @@
                         android:id="@+id/imgSenador4"
                         android:layout_width="match_parent"
                         android:layout_height="24dp"
-                        android:src="@mipmap/charicon" />
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
+                        android:src="@mipmap/charicon"
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/txtSenador4"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="TextView" />
+                        android:fontFamily="@font/latoblackitalic"
+                        android:scaleX="0.8"
+                        android:scaleY="0.8"
+                        android:textAlignment="center"
+                        android:visibility="invisible" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -230,15 +271,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
                         android:src="@mipmap/charicon"
-                        android:visibility="visible" />
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/txtGovernador1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:fontFamily="@font/latoblackitalic"
+                        android:textAlignment="center"
+                        android:visibility="invisible" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -252,14 +297,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/charicon" />
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
+                        android:src="@mipmap/charicon"
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/txtGovernador2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:fontFamily="@font/latoblackitalic"
+                        android:textAlignment="center"
+                        android:visibility="invisible" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -273,14 +323,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/charicon" />
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
+                        android:src="@mipmap/charicon"
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/txtGovernador3"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:fontFamily="@font/latoblackitalic"
+                        android:textAlignment="center"
+                        android:visibility="invisible" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -293,13 +348,18 @@
                         android:id="@+id/imgGovernador4"
                         android:layout_width="match_parent"
                         android:layout_height="25dp"
-                        android:src="@mipmap/charicon" />
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
+                        android:src="@mipmap/charicon"
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/txtGovernador4"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="TextView" />
+                        android:fontFamily="@font/latoblackitalic"
+                        android:textAlignment="center"
+                        android:visibility="invisible" />
                 </LinearLayout>
 
 
@@ -322,15 +382,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
                         android:src="@mipmap/charicon"
-                        android:visibility="visible" />
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/txtPrefeito1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:fontFamily="@font/latoblackitalic"
+                        android:textAlignment="center"
+                        android:visibility="invisible" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -344,14 +408,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/charicon" />
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
+                        android:src="@mipmap/charicon"
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/txtPrefeito2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:fontFamily="@font/latoblackitalic"
+                        android:textAlignment="center"
+                        android:visibility="invisible" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -365,14 +434,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/charicon" />
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
+                        android:src="@mipmap/charicon"
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/txtPrefeito3"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:fontFamily="@font/latoblackitalic"
+                        android:textAlignment="center"
+                        android:visibility="invisible" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -385,13 +459,18 @@
                         android:id="@+id/imgPrefeito4"
                         android:layout_width="match_parent"
                         android:layout_height="26dp"
-                        android:src="@mipmap/charicon" />
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
+                        android:src="@mipmap/charicon"
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/txtPrefeito4"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="TextView" />
+                        android:fontFamily="@font/latoblackitalic"
+                        android:textAlignment="center"
+                        android:visibility="invisible" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -412,15 +491,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
                         android:src="@mipmap/charicon"
-                        android:visibility="visible" />
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/txtVereador1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:fontFamily="@font/latoblackitalic"
+                        android:textAlignment="center"
+                        android:visibility="invisible" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -434,14 +517,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/charicon" />
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
+                        android:src="@mipmap/charicon"
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/txtVereador2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:fontFamily="@font/latoblackitalic"
+                        android:textAlignment="center"
+                        android:visibility="invisible" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -455,14 +543,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/charicon" />
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
+                        android:src="@mipmap/charicon"
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/txtVereador3"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:fontFamily="@font/latoblackitalic"
+                        android:textAlignment="center"
+                        android:visibility="invisible" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -475,13 +568,18 @@
                         android:id="@+id/imgVereador4"
                         android:layout_width="match_parent"
                         android:layout_height="23dp"
-                        android:src="@mipmap/charicon" />
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
+                        android:src="@mipmap/charicon"
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/txtVereador4"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="TextView" />
+                        android:fontFamily="@font/latoblackitalic"
+                        android:textAlignment="center"
+                        android:visibility="invisible" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -502,15 +600,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
                         android:src="@mipmap/charicon"
-                        android:visibility="visible" />
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/txtPovo1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:fontFamily="@font/latoblackitalic"
+                        android:textAlignment="center"
+                        android:visibility="invisible" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -524,14 +626,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/charicon" />
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
+                        android:src="@mipmap/charicon"
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/txtPovo2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:fontFamily="@font/latoblackitalic"
+                        android:textAlignment="center"
+                        android:visibility="invisible" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -545,14 +652,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@mipmap/charicon" />
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
+                        android:src="@mipmap/charicon"
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/txtPovo3"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:fontFamily="@font/latoblackitalic"
+                        android:textAlignment="center"
+                        android:visibility="invisible" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -565,13 +677,18 @@
                         android:id="@+id/imgPovo4"
                         android:layout_width="match_parent"
                         android:layout_height="22dp"
-                        android:src="@mipmap/charicon" />
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
+                        android:src="@mipmap/charicon"
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/txtPovo4"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="TextView" />
+                        android:fontFamily="@font/latoblackitalic"
+                        android:textAlignment="center"
+                        android:visibility="invisible" />
                 </LinearLayout>
 
 
@@ -586,10 +703,8 @@
         android:id="@+id/horizontalScrollView"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/txtVez"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
 
@@ -725,14 +840,14 @@
     </HorizontalScrollView>
 
     <TextView
-        android:id="@+id/txtAguardando"
+        android:id="@+id/txtStatusJogador"
         android:layout_width="293dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Aguardando Votação"
+        android:text="Status Jogador"
         android:textAlignment="center"
         android:textColor="#E84D5B"
         android:textSize="30sp"
@@ -743,48 +858,26 @@
         app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
         app:layout_constraintVertical_bias="0.4" />
 
-    <TextView
-        android:id="@+id/txtVez"
-        android:layout_width="293dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Vez de: Jogador"
-        android:textAlignment="center"
-        android:textColor="#E84D5B"
-        android:textSize="30sp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
-        app:layout_constraintVertical_bias="0.794" />
-
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="74dp"
-        android:layout_height="46dp"
+        android:layout_width="124dp"
+        android:layout_height="37dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:background="@drawable/pop_selecionar"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imgPresidente"
-            android:layout_width="match_parent"
-            android:layout_height="26dp"
-            android:src="@mipmap/charicon" />
-
         <TextView
             android:id="@+id/txtPresidente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:fontFamily="@font/latoblackitalic"
+            android:textAlignment="center"
+            android:visibility="invisible" />
     </LinearLayout>
 
 
