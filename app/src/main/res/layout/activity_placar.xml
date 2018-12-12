@@ -116,7 +116,7 @@
                     android:textColor="#2BADB5"
                     android:textSize="36sp"
                     android:textStyle="bold"
-                    android:visibility="visible" />
+                    android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/pontosGanhos3"
@@ -125,7 +125,8 @@
                     android:layout_weight="1"
                     android:text="(+0000)"
                     android:textColor="#E84D5B"
-                    android:textSize="8pt" />
+                    android:textSize="8pt"
+                    android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/pontos3"
@@ -135,7 +136,8 @@
                     android:text="00000"
                     android:textColor="#2BADB5"
                     android:textSize="8pt"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -151,7 +153,7 @@
                     android:textColor="#2BADB5"
                     android:textSize="36sp"
                     android:textStyle="bold"
-                    android:visibility="visible" />
+                    android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/pontosGanhos4"
@@ -160,7 +162,8 @@
                     android:layout_weight="1"
                     android:text="(+0000)"
                     android:textColor="#E84D5B"
-                    android:textSize="8pt" />
+                    android:textSize="8pt"
+                    android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/pontos4"
@@ -170,7 +173,8 @@
                     android:text="00000"
                     android:textColor="#2BADB5"
                     android:textSize="8pt"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -186,7 +190,7 @@
                     android:textColor="#2BADB5"
                     android:textSize="36sp"
                     android:textStyle="bold"
-                    android:visibility="visible" />
+                    android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/pontosGanhos5"
@@ -195,7 +199,8 @@
                     android:layout_weight="1"
                     android:text="(+0000)"
                     android:textColor="#E84D5B"
-                    android:textSize="8pt" />
+                    android:textSize="8pt"
+                    android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/pontos5"
@@ -205,7 +210,8 @@
                     android:text="00000"
                     android:textColor="#2BADB5"
                     android:textSize="8pt"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
             </LinearLayout>
 
             <LinearLayout
@@ -222,7 +228,7 @@
                     android:textColor="#2BADB5"
                     android:textSize="36sp"
                     android:textStyle="bold"
-                    android:visibility="visible" />
+                    android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/pontosGanhos6"
@@ -231,7 +237,8 @@
                     android:layout_weight="1"
                     android:text="(+0000)"
                     android:textColor="#E84D5B"
-                    android:textSize="8pt" />
+                    android:textSize="8pt"
+                    android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/pontos6"
@@ -241,7 +248,8 @@
                     android:text="00000"
                     android:textColor="#2BADB5"
                     android:textSize="8pt"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
             </LinearLayout>
 
             <TextView
