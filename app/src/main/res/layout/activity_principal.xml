@@ -9,8 +9,8 @@
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout3"
-        android:layout_width="365dp"
-        android:layout_height="340dp"
+        android:layout_width="360dp"
+        android:layout_height="339dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -51,6 +51,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
                         android:src="@mipmap/charicon"
                         android:visibility="visible" />
 
@@ -59,7 +61,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textAlignment="center" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -73,6 +76,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
                         android:src="@mipmap/charicon" />
 
                     <TextView
@@ -80,7 +85,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textAlignment="center" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -94,6 +100,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
                         android:src="@mipmap/charicon" />
 
                     <TextView
@@ -101,7 +109,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textAlignment="center" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -114,13 +123,16 @@
                         android:id="@+id/imgMinis4"
                         android:layout_width="match_parent"
                         android:layout_height="26dp"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
                         android:src="@mipmap/charicon" />
 
                     <TextView
                         android:id="@+id/txtMinis4"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textAlignment="center" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -141,6 +153,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
                         android:src="@mipmap/charicon"
                         android:visibility="visible" />
 
@@ -149,7 +163,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textAlignment="center" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -163,6 +178,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
                         android:src="@mipmap/charicon" />
 
                     <TextView
@@ -170,7 +187,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textAlignment="center" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -184,6 +202,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
                         android:src="@mipmap/charicon" />
 
                     <TextView
@@ -191,7 +211,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textAlignment="center" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -204,13 +225,18 @@
                         android:id="@+id/imgSenador4"
                         android:layout_width="match_parent"
                         android:layout_height="24dp"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
                         android:src="@mipmap/charicon" />
 
                     <TextView
                         android:id="@+id/txtSenador4"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="TextView" />
+                        android:scaleX="0.8"
+                        android:scaleY="0.8"
+                        android:text="TextView"
+                        android:textAlignment="center" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -231,6 +257,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
                         android:src="@mipmap/charicon"
                         android:visibility="visible" />
 
@@ -239,7 +267,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textAlignment="center" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -253,6 +282,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
                         android:src="@mipmap/charicon" />
 
                     <TextView
@@ -260,7 +291,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textAlignment="center" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -274,6 +306,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
                         android:src="@mipmap/charicon" />
 
                     <TextView
@@ -281,7 +315,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textAlignment="center" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -294,13 +329,16 @@
                         android:id="@+id/imgGovernador4"
                         android:layout_width="match_parent"
                         android:layout_height="25dp"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
                         android:src="@mipmap/charicon" />
 
                     <TextView
                         android:id="@+id/txtGovernador4"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textAlignment="center" />
                 </LinearLayout>
 
 
@@ -323,6 +361,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
                         android:src="@mipmap/charicon"
                         android:visibility="visible" />
 
@@ -331,7 +371,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textAlignment="center" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -345,6 +386,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
                         android:src="@mipmap/charicon" />
 
                     <TextView
@@ -352,7 +395,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textAlignment="center" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -366,6 +410,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
                         android:src="@mipmap/charicon" />
 
                     <TextView
@@ -373,7 +419,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textAlignment="center" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -386,13 +433,16 @@
                         android:id="@+id/imgPrefeito4"
                         android:layout_width="match_parent"
                         android:layout_height="26dp"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
                         android:src="@mipmap/charicon" />
 
                     <TextView
                         android:id="@+id/txtPrefeito4"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textAlignment="center" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -413,6 +463,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
                         android:src="@mipmap/charicon"
                         android:visibility="visible" />
 
@@ -421,7 +473,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textAlignment="center" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -435,6 +488,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
                         android:src="@mipmap/charicon" />
 
                     <TextView
@@ -442,7 +497,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textAlignment="center" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -456,6 +512,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
                         android:src="@mipmap/charicon" />
 
                     <TextView
@@ -463,7 +521,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textAlignment="center" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -476,13 +535,16 @@
                         android:id="@+id/imgVereador4"
                         android:layout_width="match_parent"
                         android:layout_height="23dp"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
                         android:src="@mipmap/charicon" />
 
                     <TextView
                         android:id="@+id/txtVereador4"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textAlignment="center" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -503,6 +565,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
                         android:src="@mipmap/charicon"
                         android:visibility="visible" />
 
@@ -511,7 +575,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textAlignment="center" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -525,6 +590,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
                         android:src="@mipmap/charicon" />
 
                     <TextView
@@ -532,7 +599,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textAlignment="center" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -546,6 +614,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
                         android:src="@mipmap/charicon" />
 
                     <TextView
@@ -553,7 +623,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textAlignment="center" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -566,13 +637,16 @@
                         android:id="@+id/imgPovo4"
                         android:layout_width="match_parent"
                         android:layout_height="22dp"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
                         android:src="@mipmap/charicon" />
 
                     <TextView
                         android:id="@+id/txtPovo4"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textAlignment="center" />
                 </LinearLayout>
 
 
