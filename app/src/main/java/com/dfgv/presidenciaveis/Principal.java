@@ -771,19 +771,43 @@ public class Principal extends Activity {
 
     //POPUP
 
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == 1) {
+
+            Boolean eleger = data.getBooleanExtra("eleger", false);
+
+            if(eleger) {
+                String personagem = data.getStringExtra("nome");
+                promoverPersonagem(personagem.substring(0, 1));
+            }
+        }
+
+        else if(requestCode == 2) {
+
+        }
+
+        else if(requestCode == 3) {
+
+            Long setor = data.getLongExtra("setor", -1);
+            Integer index = data.getIntExtra("buttonIndex", 0);
+            Button btn = buttons.get(index);
+
+            if(setor >= 0)
+                posicionarPersonagem(btn, setor, btn.getText().toString().substring(0, 1));
+        }
+    }
+
     void mostrarPopUpPromover(String personagem) {
 
         if(!turnoDoJogador) return;
         Intent intent = new Intent(Principal.this, PopUpEleger.class);
         intent.putExtra("nome", personagem);
 
-        startActivity(intent);
-
-        Boolean eleger = intent.getBooleanExtra("eleger", false);
-
-        if(eleger)
-            promoverPersonagem(personagem.substring(0,1));
-
+        startActivityForResult(intent, 1);
 
     }
 
@@ -802,13 +826,9 @@ public class Principal extends Activity {
         //TODO: FAZER O POPUP RESPONDER AO INTENT E VOLTAR A OPCAO NO MESMO
         Intent intent = new Intent(Principal.this, PopUpSelecionar.class);
         intent.putExtra("nome", btn.getText().toString());
+        intent.putExtra("buttonIndex", buttons.indexOf(btn));
 
-        startActivity(intent);
-
-        Long setor = intent.getLongExtra("setor", -1);
-
-        if(setor >= 0)
-            posicionarPersonagem(btn, setor, btn.getText().toString().substring(0, 1));
+        startActivityForResult(intent, 3);
 
     }
 
