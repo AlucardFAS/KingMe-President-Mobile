@@ -7,10 +7,10 @@ Alternative version of board game KingMe, with 2018 brazilian candidates.
 
 # Authors ©
 
-Danilo Mative
-Fernando Silva
-Guilherme Lucioni
-Victor Trindade
+Danilo Mative<br>
+Fernando Silva<br>
+Guilherme Lucioni<br>
+Victor Trindade<br>
 
 
 ## About
@@ -22,7 +22,7 @@ Project developed for the University Center Senac, for the discipline of Program
 
 ## Web Service Documentation
 
-- <a href="https://documenter.getpostman.com/view/5867241/RzZAkdjR">ostman Documentation Services</a>
+- <a href="https://documenter.getpostman.com/view/5867241/RzZAkdjR">Postman Documentation Services</a>
 
 
 ## Dependencies
